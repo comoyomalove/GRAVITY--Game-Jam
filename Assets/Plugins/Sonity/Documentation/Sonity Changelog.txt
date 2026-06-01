@@ -1,0 +1,156 @@
+// Created by Victor Engström. This free trial is for testing only. It doesn't output sound in builds.
+// Copyright 2024 Sonigon AB. Please buy the full version to get sound in builds and to support developement.
+// https://assetstore.unity.com/packages/tools/audio/sonity-audio-middleware-229857
+
+Sonity - Changelog
+
+1.0.6 - The Big Volume & Debug Update
+Please remove the whole Sonity folder before upgrading because scripts were renamed.
+Support: Added support for Unity 6 (6000.0), velocity replaced with linearVelocity.
+New Feature: Added support to increase the volume of SoundEvents and SoundContainers by +24 dB each and SoundVolumeGroups by +12 dB.
+New Feature: Added SoundEvent Base Volume & Polyphony settings (convert old to new with "Tools/Sonity 🔊/Convert SoundEvent Modifier Volume and Polyphony to Base").
+New Feature: Added SoundVolumeGroup objects for linked SoundEvent volume control.
+New Feature: Added SoundManager Debug Log SoundEvents to console.
+New Feature: Added debug settings per SoundEvent for e.g. hiding or changing color of debug drawing and logging.
+New Feature: Added new editor tools "Selection History", "Reference Finder" and "Select Same Type".
+New Feature: Added SoundContainer setting "HRTF Spatialize" for external spatializer plugin support.
+New Feature: Added fields for the AudioListener and the AudioListenerDistance for easy debugging in the SoundManager Statistics.
+New Feature: Added support for having the AudioMixer as an Adressable asset in the SoundManager.
+New Feature: Added "Note" fields for all scripable objects.
+New Feature: Added adressable support for scriptable object asset comparison by adding custom GUIDs to all scriptable objects.
+New Feature: Added SoundEvent.GetContainsLoop().
+New Feature: Added SoundEvent.GetLastPlayedAudioSource().
+New Feature: Added SoundManager Debug Draw SoundEvents added "Hide Closer Than" in game view setting.
+Fix: Removed AudioMixerGroup from the SoundContainer. Convert with: "Tools/Sonity 🔊/Legacy Conversion/Apply SoundContainer AudioMixerGroup to SoundEvent if None".
+Fix: Fixed so preview uses Global Volume.
+Fix: Fixed bug where SoundPreset SoundEvent creation would return null SoundTag.
+Fix: Removed ducking limiter from AudioMixer example because it sometimes seemed to make audio silent when lots of things were playing.
+Fix: Better find AudioListener & AudioListenerDistance where disabled objects doesnt count.
+Fix: Fixed problem where sound would be stopped when RunInBackground is disabled and not restart when Unity regains focus.
+Fix: Removed debug of missing SoundManager when application is quitting.
+Fix: Added checks and info that the SoundPicker is not nestable in an array or custom class because it is built upon CustomPropertyDrawer.
+Fix: Cleaned up SoundMix functions.
+Fix: Fixed the icons for the scriptable object with new higher resolution versions and better import settings.
+Fix: Replaced deprecated FindObjectOfType and FindObjectsOfType with newer versions when supported.
+Fix: Fixed example scenes Unity downgrade bug where BoxCollider sizes were set to size 2.
+Documentation: Fixed info about SoundMix and AudioMixerGroup.
+Change: Made Advanced subcategory for Settings in SoundContainers, SoundEvents and the SoundManager.
+Change: Removed the create SoundPolyGroup for SE shortcuts.
+Change: Fixed the default SoundManager Instance Statistics settings.
+Change: Increased the SoundContainer "ReverbZoneMix Distance Increase" from 0.1 to 0.5.
+
+1.0.5.1 - Hotfix
+Fix: Fixed bug where AudioListener wasn't checked if it was disabled properly.
+Fix: Fixed bug where SoundPreset copied SoundEvent modifiers and SoundEvent SoundTag settings by reference instead of by value.
+
+1.0.5 - SoundPhysics Update
+New Tutorial: SoundPhysics & Intensity Tutorial (https://youtu.be/ehnwL678N4E)
+New Feature: Support for Adressables (deleting SoundEvents in runtime).
+New Feature: SoundPhysics is expanded with support for Is Trigger and exit sounds.
+New Feature: New SoundPhysicsConditions object for advanced reusable conditions and terrain layer support.
+New Feature: Added a SoundPreset object enabling custom presets for SoundEvents and SoundContainers.
+New Feature: Added Pause/Unpause functions e.g. Pause/Unpause AllAtOwner, Everywhere, Everything, 2D, All2D, Music, AllMusic.
+New Feature: Added SoundManager functions and settings Global Pause and Global Volume.
+New Feature: Added SoundManager setting for Sound Time Scale and default is changed from RealtimeSinceStartup to UnscaledTime.
+New Feature: Added SoundEvent settings Ignore Local Pause and Ignore Global Pause.
+New Feature: Added GetMusic and Get2D functions like e.g. GetMusicSoundEventState().
+New Feature: Better UnityEvent support by adding SoundEvent functions with less parameters like "StopAllowFadeOut and StopImmediate etc.
+Deprication: SoundPhysics is reworked with arrays of SoundEvents, automatic conversion system is added in the editor.
+Deprication: SoundPhysics is reworked to use object references so old tags must be remade.
+Documentation how to: Added How To - Optimize AudioClip Settings.
+Documentation how to: Added How To - Rename A Lot of Assets.
+Documentation how to: Added How To - Debug Sounds and Performance.
+Documentation: Documented SoundTrigger and SoundPicker functions.
+Documentation: Updated info on AudioMixerGroup performance tips.
+Documentation: Added video tutorial links.
+Change: SoundPhysics is split for performance reasons into SoundPhysics, SoundPhysics2D, SoundPhysicsNoFriction, SoundPhysics2DNoFriciton.
+Change: Renamed SoundTrigger enum StopNoFadeOut to StopImmediate.
+Change: Renamed StopAllAt2D() to StopAll2D().
+Change: Renamed tools and create assets to "Sonity 🔊".
+Change: Renamed GetLastPlayedClipTime() to GetLastPlayedClipTimeSeconds.
+Addition: Added GetLastPlayedClipTimeRatio().
+Addition: Added SoundTrigger Actions: Pause, Pause Forced, Unpause.
+Addition: Added SoundEventState.Paused.
+Addition: Added SoundPhysics example scenes including friction, exit, Trigger On etc.
+Addition: Added Intensity Scale Add and Scale Multiplier and Scale Max to 1 button.
+Addition: Added Intensity Debug Zoom for easier visual debugging.
+Addition: Added Tools "Set Selected Assets as Dirty (Force Reserialize for Resave)".
+Addition: Expanded Example_AudioMixerWithLimiter with AMB, MUS, SFX, UI, VO.
+Fix: SoundContainer distance scale is hidden when distance is disabled.
+Fix: Increased the contrast of the SoundEvent and SoundContainer icons.
+Fix: Fixed so automatic crossfades work with sound names ending with "loop".
+Fix: Fixed SoundParameterIntensity continuous threshold stopping sounds and restarting loops.
+Fix: Fixed problem where SoundPhysics friction didnt work as expected.
+Fix: Fixed bug where SoundParameters weren't nullchecked.
+Fix: Fixed so SoundContainer volume can be increased when multiple objects are selected and volume is at -0 dB.
+Fix: Optimized SoundEvent recorded intensity drawing.
+Fix: Replaced all ToLower with ToLowerInvariant for greater language support.
+Fix: Fixed bug with create assets filename extension.
+Fix: Fixed nullcheck in SoundPicker for SoundManager.Instance.
+Legacy support: Fixed Unity 2018 compability by fixing: asmdef to non guid mode, SubsystemRegistration, GetContact.impulse, editor enum and header names.
+
+1.0.4 - Free Trial Release
+Free trial version released.
+Please remove the whole Sonity folder before upgrading because scripts were moved.
+Fixed bug where audio positions were based on the previous frame.
+Fixed bug where disabled SoundEvents played in builds.
+Fixed scripts for free trial version.
+
+1.0.3 - Support for Disabling Domain Reloading
+New feature: Support for disabling domain reloading in the “enter play mode options”.
+New feature: Override Listener Distance with the AudioListenerDistance component.
+Parented all Sonity scene objects created in runtime under the SoundManager.
+Improved documentation on how to bind shortcuts.
+Fixed SoundTriggerCustomEditor example code.
+Fixed preview TriggerOnTail tail length 0 bug.
+
+1.0.2.1 - Hotfix
+Hotfix: Fixed error in SoundContainer settings editor.
+
+1.0.2 - Mixed Fixes
+Please remove the whole Sonity folder before upgrading because folders were moved.
+New feature: Pass Parameter setting in the SoundEvent for passing SoundParameters to sub SoundEvents.
+New feature: Added GetSpectrumData() to get the spectrum data from AudioSources.
+Added support for using multiple disabled AudioListeners.
+Added support for SoundTrigger Custom Override and added examples in the documentation.
+Fixed support in examples and the timeline for the new Input System Package.
+Added tips and info about "Unity Native Audio Support" in documentation.
+Fixed bug where SoundEvents with global polyphony couldn't be stopped.
+Fixed nullcheck in SoundPicker for SoundManager.Instance.
+The SoundManager and sub objects are now moved to Vector3.zero at start.
+Added example scene showcasing SoundPicker.
+SoundPhysics added info about rigidbody requirements.
+SoundPhysics removed collider requirement warning.
+Updated asmdef info in documentation.
+Preparing code for trial DLL version.
+Fixed documentation SoundParameter incorrect example code.
+Fixed Find Assets OrderBy bug.
+Fixed DontDestroyOnLoad tooltip.
+Fixed Modifier tooltips.
+Fixed SoundParameterIntensity summary.
+Fixed Play2D summary.
+
+1.0.1 - Gun Tutorial
+Please remove the whole Sonity folder before upgrading because folders were moved.
+New feature: Automatic asset creator finds common denominator name.
+New feature: SoundContainer presets added set automatic looping and automatic crossfades.
+Added new examples used in the new gun tutorials.
+Updated documentation.
+Fixed bug with serialized cache bools.
+Fixed bug with SoundTag position.
+Fixed bug with preview SoundEvent distance scale.
+Fixed so debug logs only print in developent builds and the editor.
+Fixed nullcheck for camera in "Draw SoundEvents in Game View".
+Changed so timeline zooms when holding down control and scrolling with mousewheel.
+Changed so SoundEvent SoundTag always use modifiers.
+Trigger On Tail default length changed to 0.
+Trigger On Tail added warning if length is less than shortest AudioClip.
+SoundEvent and SoundManager GetMaxLength removed forceUpdate.
+All helpboxes now respect GUI Warnings setting.
+Optimized SoundManager update.
+Minor spelling corrections of tooltips and documentation.
+Cleared SoundEventInstanceDictionaryValue.cs
+Changed template scripts to useDontDestroyOnLoad to public.
+
+1.0.0 - First Release
+Release.

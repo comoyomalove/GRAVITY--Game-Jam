@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7587e79dba767974180aaa071919b937
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 244369
+  packageName: Sonity - Audio Middleware - Free Trial
+  packageVersion: 1.0.6
+  assetPath: Assets/Plugins/Sonity/Scripts/Public/Asmdef_Sonity.Public.Runtime.asmdef
+  uploadId: 712752

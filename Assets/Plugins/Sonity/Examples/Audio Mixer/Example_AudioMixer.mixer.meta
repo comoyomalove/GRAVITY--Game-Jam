@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 731a8227e9267394686f82f3cb6e3be9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 24100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 244369
+  packageName: Sonity - Audio Middleware - Free Trial
+  packageVersion: 1.0.6
+  assetPath: Assets/Plugins/Sonity/Examples/Audio Mixer/Example_AudioMixer.mixer
+  uploadId: 712752

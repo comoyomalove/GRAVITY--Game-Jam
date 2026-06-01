@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9a6459d08766422419cd0c149323a19e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 244369
+  packageName: Sonity - Audio Middleware - Free Trial
+  packageVersion: 1.0.6
+  assetPath: Assets/Plugins/Sonity/Examples/Scripts/ExampleFollowCamera.cs
+  uploadId: 712752
