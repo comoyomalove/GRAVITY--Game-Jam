@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f3461853-9a9f-4f58-a0f5-22b8187603f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BIP - GRAVITY/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BIP - GRAVITY/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BIP - GRAVITY/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BIP - GRAVITY/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BIP - GRAVITY/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Loop_A_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Loop_A_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Loop_A_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Loop_A_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Loop_A_SE 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Loop_A_SE 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_A_Tail_100_BPM_1_Bar_SC.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_A_Tail_100_BPM_1_Bar_SC.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_A_Tail_100_BPM_1_Bar_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_A_Tail_100_BPM_1_Bar_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_A_Tail_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_A_Tail_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_B_Tail_80_BPM_1_Bar_SC.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_B_Tail_80_BPM_1_Bar_SC.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_B_Tail_80_BPM_1_Bar_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_B_Tail_80_BPM_1_Bar_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_B_Tail_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_B_Tail_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_C_Tail_90_BPM_1_Bar_SC.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_C_Tail_90_BPM_1_Bar_SC.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_C_Tail_90_BPM_1_Bar_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_C_Tail_90_BPM_1_Bar_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_C_Tail_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_C_Tail_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_High_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_High_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_High_Tail_95_BPM_1_Bar_SC.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_High_Tail_95_BPM_1_Bar_SC.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_High_Tail_95_BPM_1_Bar_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_High_Tail_95_BPM_1_Bar_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_Low_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_Low_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_Low_Tail_95_BPM_1_Bar_SC.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_Low_Tail_95_BPM_1_Bar_SC.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_Low_Tail_95_BPM_1_Bar_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Stem_A_Intensity_Low_Tail_95_BPM_1_Bar_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Bow_Shoot_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Bow_Shoot_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Bow_Shoot_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Bow_Shoot_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Bow_Shoot_SE 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Bow_Shoot_SE 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Loop_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Loop_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Loop_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Loop_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Loop_SE 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Loop_SE 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Start_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Start_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Start_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Start_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Start_SE 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Start_SE 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Stop_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Stop_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Stop_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Stop_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Stop_SE 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Stop_SE 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Close_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Close_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Close_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Close_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Close_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Close_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Distant_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Distant_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Distant_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Distant_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Distant_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Distant_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Low_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Low_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Low_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Low_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Low_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Low_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Mechanism_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Mechanism_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Mechanism_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Mechanism_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Mechanism_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Pistol/Example_SFX_Shot_Pistol_Mechanism_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Close_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Close_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Close_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Close_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Close_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Close_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Distant_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Distant_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Distant_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Distant_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Distant_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Distant_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Far_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Far_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Far_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Far_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Far_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Indoor_Far_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Close_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Close_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Close_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Close_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Close_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Close_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Distant_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Distant_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Distant_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Distant_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Distant_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Distant_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Far_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Far_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Far_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Far_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Far_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Guns/Reflections/Example_SFX_Reflections_Outdoor_Far_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Hard_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Hard_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Hard_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Hard_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Hard_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Hard_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Soft_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Soft_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Soft_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Soft_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Soft_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Friction_Loop_Soft_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Hard_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Hard_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Hard_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Hard_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Hard_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Hard_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Medium_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Medium_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Medium_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Medium_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Medium_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Medium_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Soft_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Soft_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Soft_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Soft_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Soft_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Metal_Box/Example_SFX_Metal_Box_Impact_Soft_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Dirt_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Dirt_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Dirt_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Dirt_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Dirt_SE 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Dirt_SE 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Grass_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Grass_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Grass_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Grass_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Grass_SE 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Grass_SE 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Exit_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Exit_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Exit_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Exit_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Exit_SE 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Exit_SE 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Hard_Loop_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Hard_Loop_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Hard_Loop_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Hard_Loop_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Hard_Loop_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Hard_Loop_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Soft_Loop_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Soft_Loop_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Soft_Loop_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Soft_Loop_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Soft_Loop_SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Friction_Soft_Loop_SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Impact_SC 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Impact_SC 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Impact_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Impact_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Impact_SE 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Water/Example_SFX_Water_Impact_SE 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_AMB_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_AMB_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_Default_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_Default_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_MUS_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_MUS_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_SFX_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_SFX_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_UI_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_UI_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_VO_SE 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/SoundPreset/Example_Template_VO_SE 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/LinusScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/LinusScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Sprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Sprite/Bubble-Breather-Death1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Sprite/Bubble-Breather-Death1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Sprite/Chase - Mockup st SC.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Sprite/Chase - Mockup st SC.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Sprite/Chase - Mockup st SE.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Sprite/Chase - Mockup st SE.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Sprite/Chase - Mockup st1.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Sprite/Chase - Mockup st1.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/_SC.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/_SC.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Loop_A_SE.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Loop_A_SE.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_C_Tail_SE.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/Music/Example_MUS_Playlist_C_Tail_SE.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Stop_SE.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Example_SFX_Drill_Stop_SE.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/Scipt/FKeyActivtor.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="3EceZRx3HH0TKMHv6mjQPcUQg8r" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "feature/sound",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f3461853-9a9f-4f58-a0f5-22b8187603f7" name="Changes" comment="" />
+      <created>1780482342239</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780482342239</updated>
+      <workItem from="1780482346178" duration="1014000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
