@@ -14,38 +14,32 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
     [Header("Movement")]
     [SerializeField] [Tooltip("Base movement speed along the gravity-aligned tangent direction.")]
     [Min(0f)]
-[Header("Movement")]
     private float moveSpeed = 8f;
 
     [SerializeField] [Tooltip("How quickly the player reaches target tangent speed.")]
     [Min(0f)]
-[Header("Movement")]
     private float moveAcceleration = 35f;
 
     [SerializeField] [Tooltip("Impulse strength applied when jumping away from gravity direction.")]
     [Min(0f)]
-[Header("Movement")]
     private float jumpImpulse = 8f;
 
     [Header("Gravity / Stickiness")]
-    [SerializeField] [Tooltip("Custom gravity force strength applied every physics frame.")]
+    [SerializeField] [Tooltip("Fallback custom gravity force strength applied if zone-driven vector is unavailable.")]
     [Min(0f)]
-[Header("Gravity")]
     private float gravityStrength = 25f;
 
     [SerializeField] [Tooltip("Extra stick force to keep player attached to surface when grounded.")]
     [Min(0f)]
-[Header("Gravity")]
     private float stickForce = 20f;
 
     [SerializeField] [Tooltip("Distance of raycast used to detect if player is grounded.")]
     [Min(0.01f)]
-[Header("Gravity")]
     private float groundCheckDistance = 0.6f;
 
     [Header("Rotation")]
     [SerializeField] [Tooltip("Sprite rotation offset in degrees to align artwork to gravity direction.")]
-[Min(-360f)]
+    [Range(-360f, 360f)]
     private float spriteUpOffset = 0f;
 
     [SerializeField] [Tooltip("Player Rigidbody2D used for movement and force application.")]
@@ -81,12 +75,22 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
             return;
         }
 
-        gravityDir = gravityManager.GetGravityDirection(rb.position);
-        tangentDir = new Vector2(-gravityDir.y, gravityDir.x);
+        Vector2 gravityVector = gravityManager.GetGravityVector(rb.position);
 
+        if (gravityVector.sqrMagnitude > 0.0001f)
+        {
+            gravityDir = gravityVector.normalized;
+        }
+        else
+        {
+            gravityDir = gravityManager.GetGravityDirection(rb.position);
+            gravityVector = gravityDir * gravityStrength;
+        }
+
+        tangentDir = new Vector2(-gravityDir.y, gravityDir.x);
         grounded = Physics2D.Raycast(rb.position, gravityDir, groundCheckDistance, groundLayer);
 
-        rb.AddForce(gravityDir * gravityStrength * rb.mass, ForceMode2D.Force);
+        rb.AddForce(gravityVector * rb.mass, ForceMode2D.Force);
 
         if (grounded)
         {
@@ -94,7 +98,6 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
         }
 
         Vector2 velocity = rb.linearVelocity;
-
         float gravityVelocity = Vector2.Dot(velocity, gravityDir);
         float tangentVelocity = Vector2.Dot(velocity, tangentDir);
 

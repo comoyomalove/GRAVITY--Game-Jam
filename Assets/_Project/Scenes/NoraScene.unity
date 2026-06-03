@@ -1175,10 +1175,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
-  useLocalOverride: 0
-  localGravityStrength: 10
-  localInfluenceRadius: 5
-  localFalloffPower: 2
+  useLocalOverride: 1
+  localGravityStrength: 5
+  localInfluenceRadius: 2
+  localFalloffPower: 1
   localPriority: 0
   zoneEnabled: 1
   drawGizmo: 1
