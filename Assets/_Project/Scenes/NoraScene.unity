@@ -363,10 +363,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
-  useLocalOverride: 0
-  localGravityStrength: 10
-  localInfluenceRadius: 5
-  localFalloffPower: 2
+  useLocalOverride: 1
+  localGravityStrength: 3
+  localInfluenceRadius: 7.5
+  localFalloffPower: 0.1
   localPriority: 0
   zoneEnabled: 1
   drawGizmo: 1
@@ -538,10 +538,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
-  useLocalOverride: 0
-  localGravityStrength: 10
-  localInfluenceRadius: 5
-  localFalloffPower: 2
+  useLocalOverride: 1
+  localGravityStrength: 3
+  localInfluenceRadius: 7.5
+  localFalloffPower: 0.1
   localPriority: 0
   zoneEnabled: 1
   drawGizmo: 1
@@ -863,10 +863,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
-  useLocalOverride: 0
-  localGravityStrength: 10
-  localInfluenceRadius: 5
-  localFalloffPower: 2
+  useLocalOverride: 1
+  localGravityStrength: 3
+  localInfluenceRadius: 7.5
+  localFalloffPower: 0.1
   localPriority: 0
   zoneEnabled: 1
   drawGizmo: 1
@@ -1176,9 +1176,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
   useLocalOverride: 1
-  localGravityStrength: 5
-  localInfluenceRadius: 2
-  localFalloffPower: 1
+  localGravityStrength: 3
+  localInfluenceRadius: 7.5
+  localFalloffPower: 0.1
   localPriority: 0
   zoneEnabled: 1
   drawGizmo: 1
@@ -1447,7 +1447,7 @@ Transform:
   m_GameObject: {fileID: 1965041794}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.72, y: -3.06, z: 0}
+  m_LocalPosition: {x: -0.01, y: -4.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1504,6 +1504,63 @@ MonoBehaviour:
   autoFindZones: 1
   gravityZones: []
   strongestWins: 1
+--- !u!1001 &3569307717328396386
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035477515500837001, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985180889230706553, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
+      propertyPath: m_Name
+      value: Platforms
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1bb4d99e3cd91c342a40e00ef0e3532d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1518,3 +1575,4 @@ SceneRoots:
   - {fileID: 1828514461}
   - {fileID: 1341091419}
   - {fileID: 1965041796}
+  - {fileID: 3569307717328396386}
