@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class NoraPlayerGravity : MonoBehaviour
 {
+    [Header("References")]
+
     public NoraGravityFieldManager gravityManager;
 
     public float gravityStrength = 20f;
 
+    [SerializeField] [Tooltip("Player Rigidbody2D that receives gravity force.")]
     private Rigidbody2D rb;
 
     private void Start()

@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -6,23 +5,52 @@ using UnityEngine;
 public class NoraPlayerWallMovement2D : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private NoraGravityFieldManager gravityManager;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] [Tooltip("Gravity manager that defines current gravity direction in the arena.")]
+    private NoraGravityFieldManager gravityManager;
+
+    [SerializeField] [Tooltip("Layer mask used to detect ground surfaces relative to active gravity.")]
+    private LayerMask groundLayer;
 
     [Header("Movement")]
-    [SerializeField] private float moveSpeed = 8f;
-    [SerializeField] private float moveAcceleration = 35f;
-    [SerializeField] private float jumpImpulse = 8f;
+    [SerializeField] [Tooltip("Base movement speed along the gravity-aligned tangent direction.")]
+    [Min(0f)]
+[Header("Movement")]
+    private float moveSpeed = 8f;
+
+    [SerializeField] [Tooltip("How quickly the player reaches target tangent speed.")]
+    [Min(0f)]
+[Header("Movement")]
+    private float moveAcceleration = 35f;
+
+    [SerializeField] [Tooltip("Impulse strength applied when jumping away from gravity direction.")]
+    [Min(0f)]
+[Header("Movement")]
+    private float jumpImpulse = 8f;
 
     [Header("Gravity / Stickiness")]
-    [SerializeField] private float gravityStrength = 25f;
-    [SerializeField] private float stickForce = 20f;
-    [SerializeField] private float groundCheckDistance = 0.6f;
+    [SerializeField] [Tooltip("Custom gravity force strength applied every physics frame.")]
+    [Min(0f)]
+[Header("Gravity")]
+    private float gravityStrength = 25f;
+
+    [SerializeField] [Tooltip("Extra stick force to keep player attached to surface when grounded.")]
+    [Min(0f)]
+[Header("Gravity")]
+    private float stickForce = 20f;
+
+    [SerializeField] [Tooltip("Distance of raycast used to detect if player is grounded.")]
+    [Min(0.01f)]
+[Header("Gravity")]
+    private float groundCheckDistance = 0.6f;
 
     [Header("Rotation")]
-    [SerializeField] private float spriteUpOffset = 0f;
+    [SerializeField] [Tooltip("Sprite rotation offset in degrees to align artwork to gravity direction.")]
+[Min(-360f)]
+    private float spriteUpOffset = 0f;
 
+    [SerializeField] [Tooltip("Player Rigidbody2D used for movement and force application.")]
     private Rigidbody2D rb;
+
     private float moveInput;
     private bool jumpQueued;
     private bool grounded;
@@ -71,36 +99,18 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
         float tangentVelocity = Vector2.Dot(velocity, tangentDir);
 
         float targetTangentVelocity = moveInput * moveSpeed;
+        float newTangentVelocity = Mathf.MoveTowards(tangentVelocity, targetTangentVelocity, moveAcceleration * Time.fixedDeltaTime);
 
-        float newTangentVelocity = Mathf.MoveTowards(
-            tangentVelocity,
-            targetTangentVelocity,
-            moveAcceleration * Time.fixedDeltaTime
-        );
-
-        rb.linearVelocity = tangentDir * newTangentVelocity + gravityDir * gravityVelocity;
+        rb.linearVelocity = gravityDir * gravityVelocity + tangentDir * newTangentVelocity;
 
         if (jumpQueued && grounded)
         {
             rb.AddForce(-gravityDir * jumpImpulse * rb.mass, ForceMode2D.Impulse);
-            grounded = false;
         }
 
         jumpQueued = false;
 
-        float angle = gravityManager.GetRotationAngle(gravityDir, spriteUpOffset);
+        float angle = Mathf.Atan2(-gravityDir.y, -gravityDir.x) * Mathf.Rad2Deg + spriteUpOffset;
         rb.MoveRotation(angle);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (rb == null || gravityManager == null)
-        {
-            return;
-        }
-
-        Vector2 dir = gravityManager.GetGravityDirection(transform.position);
-        Gizmos.color = grounded ? Color.green : Color.red;
-        Gizmos.DrawLine(rb.position, rb.position + dir * groundCheckDistance);
     }
 }
