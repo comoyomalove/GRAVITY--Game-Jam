@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GravityProfile
   m_EditorClassIdentifier: Assembly-CSharp::GravityProfileSO
   profileName: Default Profile
-  gravityStrength: 0.5
-  influenceRadius: 3
+  gravityStrength: 0
+  influenceRadius: 100
   falloffPower: 2
   priority: 0
-  isEnabled: 0
+  isEnabled: 1

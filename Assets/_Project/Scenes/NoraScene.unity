@@ -363,9 +363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
-  useLocalOverride: 0
-  localGravityStrength: 10
-  localInfluenceRadius: 5
+  useLocalOverride: 1
+  localGravityStrength: 3
+  localInfluenceRadius: 8.92
   localFalloffPower: 2
   localPriority: 0
   zoneEnabled: 1
@@ -538,9 +538,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
-  useLocalOverride: 0
-  localGravityStrength: 10
-  localInfluenceRadius: 5
+  useLocalOverride: 1
+  localGravityStrength: 20
+  localInfluenceRadius: 6
   localFalloffPower: 2
   localPriority: 0
   zoneEnabled: 1
@@ -863,9 +863,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
-  useLocalOverride: 0
-  localGravityStrength: 10
-  localInfluenceRadius: 5
+  useLocalOverride: 1
+  localGravityStrength: 6
+  localInfluenceRadius: 7.23
   localFalloffPower: 2
   localPriority: 0
   zoneEnabled: 1
@@ -1176,8 +1176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
   useLocalOverride: 1
-  localGravityStrength: 5
-  localInfluenceRadius: 2
+  localGravityStrength: 1
+  localInfluenceRadius: 8
   localFalloffPower: 1
   localPriority: 0
   zoneEnabled: 1
@@ -1381,14 +1381,29 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  rb: {fileID: 1828514459}
   moveSpeed: 8
   moveAcceleration: 35
-  jumpImpulse: 8
   gravityStrength: 25
   stickForce: 20
   groundCheckDistance: 0.6
+  jetpackKey: 304
+  jetpackBurstImpulse: 10
+  jetpackSustainForce: 8
+  maxJetpackHoldDuration: 0.6
+  fuelCostPerBurst: 10
+  fuelCostPerSecondWhileHolding: 20
+  maxFuel: 100
+  currentFuel: 100
+  startWithFullFuel: 1
+  jetpackSteeringInfluence: 0.5
+  useStrongSteeringOverride: 0
+  strongSteeringInfluence: 0.85
+  useVerticalInputForJetpackSteering: 1
   spriteUpOffset: 0
-  rb: {fileID: 0}
+  grounded: 0
+  currentJetpackHoldTime: 0
+  currentJetpackDirection: {x: 0, y: 0}
 --- !u!114 &1828514463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,6 +1433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1965041796}
   - component: {fileID: 1965041795}
+  - component: {fileID: 1965041797}
   m_Layer: 0
   m_Name: RespawnPoint
   m_TagString: Untagged
@@ -1447,12 +1463,33 @@ Transform:
   m_GameObject: {fileID: 1965041794}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.72, y: -3.06, z: 0}
+  m_LocalPosition: {x: -3.38, y: -3.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1965041797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965041794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2549ebd2f8368484aab86d58926c6ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GravityZone2D
+  profile: {fileID: 0}
+  useLocalOverride: 1
+  localGravityStrength: 0
+  localInfluenceRadius: 1
+  localFalloffPower: 2
+  localPriority: 0
+  zoneEnabled: 0
+  drawGizmo: 1
+  gizmoColor: {r: 0.2, g: 0.8, b: 1, a: 0.4}
 --- !u!1 &1983685992
 GameObject:
   m_ObjectHideFlags: 0
