@@ -40,6 +40,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 .DS_Store
-*.vsidx
+*.slnx
 *.json
+*.slnx
 *.slnx
