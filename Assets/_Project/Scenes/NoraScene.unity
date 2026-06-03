@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 1128943736}
   - component: {fileID: 1128943735}
   - component: {fileID: 1128943738}
+  - component: {fileID: 1128943739}
   m_Layer: 9
   m_Name: WallBottom
   m_TagString: Untagged
@@ -259,7 +260,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -370,6 +371,20 @@ MonoBehaviour:
   zoneEnabled: 1
   drawGizmo: 1
   gizmoColor: {r: 0.2, g: 0.8, b: 1, a: 0.4}
+--- !u!114 &1128943739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128943734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55512aef5e94647c9ae7b78cd6f65776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CornerDeathZone
+  zoneActive: 1
+  playerTag: Player
 --- !u!1 &1340568734
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +397,7 @@ GameObject:
   - component: {fileID: 1340568736}
   - component: {fileID: 1340568735}
   - component: {fileID: 1340568738}
+  - component: {fileID: 1340568739}
   m_Layer: 9
   m_Name: WallTop
   m_TagString: Untagged
@@ -419,7 +435,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -530,6 +546,20 @@ MonoBehaviour:
   zoneEnabled: 1
   drawGizmo: 1
   gizmoColor: {r: 0.2, g: 0.8, b: 1, a: 0.4}
+--- !u!114 &1340568739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340568734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55512aef5e94647c9ae7b78cd6f65776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CornerDeathZone
+  zoneActive: 1
+  playerTag: Player
 --- !u!1 &1341091415
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +630,7 @@ MonoBehaviour:
   profile: {fileID: 11400000, guid: 062814054ca1349e9a85869473eb8b1f, type: 2}
   useLocalOverride: 1
   localGravityStrength: 3
-  localInfluenceRadius: 5
+  localInfluenceRadius: 2
   localFalloffPower: 2
   localPriority: 0
   zoneEnabled: 1
@@ -692,6 +722,7 @@ GameObject:
   - component: {fileID: 1555510197}
   - component: {fileID: 1555510196}
   - component: {fileID: 1555510199}
+  - component: {fileID: 1555510200}
   m_Layer: 9
   m_Name: WallRight
   m_TagString: Untagged
@@ -729,7 +760,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -840,6 +871,20 @@ MonoBehaviour:
   zoneEnabled: 1
   drawGizmo: 1
   gizmoColor: {r: 0.2, g: 0.8, b: 1, a: 0.4}
+--- !u!114 &1555510200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555510195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55512aef5e94647c9ae7b78cd6f65776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CornerDeathZone
+  zoneActive: 1
+  playerTag: Player
 --- !u!1 &1680736206
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1034,7 @@ GameObject:
   - component: {fileID: 1743045426}
   - component: {fileID: 1743045425}
   - component: {fileID: 1743045428}
+  - component: {fileID: 1743045429}
   m_Layer: 9
   m_Name: WallLeft
   m_TagString: Untagged
@@ -1026,7 +1072,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1137,6 +1183,20 @@ MonoBehaviour:
   zoneEnabled: 1
   drawGizmo: 1
   gizmoColor: {r: 0.2, g: 0.8, b: 1, a: 0.4}
+--- !u!114 &1743045429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743045424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55512aef5e94647c9ae7b78cd6f65776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CornerDeathZone
+  zoneActive: 1
+  playerTag: Player
 --- !u!1 &1828514456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1210,7 @@ GameObject:
   - component: {fileID: 1828514459}
   - component: {fileID: 1828514458}
   - component: {fileID: 1828514462}
+  - component: {fileID: 1828514463}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1328,6 +1389,70 @@ MonoBehaviour:
   groundCheckDistance: 0.6
   spriteUpOffset: 0
   rb: {fileID: 0}
+--- !u!114 &1828514463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828514456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238859b99ffcb4630a5b9294089c5d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDeathRespawn
+  respawnPoint: {fileID: 1965041795}
+  wallMovement: {fileID: 0}
+  playerGravity: {fileID: 0}
+  respawnDelay: 0.15
+  resetVelocityOnRespawn: 1
+  restoreFullFuelOnRespawn: 1
+  fallbackFuelAmount: 100
+--- !u!1 &1965041794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965041796}
+  - component: {fileID: 1965041795}
+  m_Layer: 0
+  m_Name: RespawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1965041795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965041794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2451d6e85890f4815a6d8ff9cda6087a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnPoint
+  isActive: 1
+--- !u!4 &1965041796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965041794}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.72, y: -3.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983685992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,3 +1517,4 @@ SceneRoots:
   - {fileID: 1087390225}
   - {fileID: 1828514461}
   - {fileID: 1341091419}
+  - {fileID: 1965041796}
