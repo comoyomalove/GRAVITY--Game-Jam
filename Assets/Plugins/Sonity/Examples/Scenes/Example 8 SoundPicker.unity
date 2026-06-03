@@ -358,6 +358,11 @@ MonoBehaviour:
       settingExpandBase: 1
       settingsExpandAdvanced: 0
       disablePlayingSounds: 0
+      asyncStartup: 0
+      steamAudioIntegrationEnable: 0
+      steamAudioSpatializeEnabledDefault: 1
+      entitySoundIntegrationEnable: 0
+      playmakerIntegrationEnable: 0
       soundTimeScale: 0
       globalPause: 0
       globalVolumeRatio: 1
@@ -367,7 +372,8 @@ MonoBehaviour:
       debugWarnings: 1
       debugInPlayMode: 1
       guiWarnings: 1
-      adressableAudioMixerUse: 0
+      addressableAudioMixerUse: 0
+      addressableAudioMixerAsyncLoadInEditor: 0
       globalSoundTag: {fileID: 0}
       distanceScale: 1
       overrideListenerDistance: 0
@@ -510,7 +516,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0f5a6e3bc5837a14d86a60fe9be93749, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

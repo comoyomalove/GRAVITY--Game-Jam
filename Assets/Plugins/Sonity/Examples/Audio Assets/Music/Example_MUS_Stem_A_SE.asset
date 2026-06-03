@@ -91,7 +91,7 @@ MonoBehaviour:
       settingsExpandBase: 1
       settingsExpandAdvanced: 0
       polyphonyMode: 0
-      audioMixerGroup: {fileID: 0}
+      audioMixerGroup: {fileID: -6159010822118239673, guid: 731a8227e9267394686f82f3cb6e3be9, type: 2}
       soundVolumeGroup: {fileID: 0}
       soundMix: {fileID: 0}
       soundPolyGroup: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
       intensityDebugResolution: 100
       intensityDebugZoom: 0.9
       intensityDebugValueList: []
-      triggerOnExpand: 0
+      triggerOnExpand: 1
       triggerOnPlayEnable: 0
       triggerOnPlaySoundEvents:
       - {fileID: 0}

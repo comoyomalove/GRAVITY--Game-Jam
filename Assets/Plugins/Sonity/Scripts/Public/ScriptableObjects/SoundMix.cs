@@ -1,6 +1,6 @@
-﻿// Created by Victor Engström. This free trial is for testing only. It doesn't output sound in builds.
-// Copyright 2024 Sonigon AB. Please buy the full version to get sound in builds and to support developement.
-// https://assetstore.unity.com/packages/tools/audio/sonity-audio-middleware-229857
+﻿// Created by Victor Engström
+// Copyright 2025 Sonigon AB
+// http://www.sonity.org/
 
 using UnityEngine;
 using System;
@@ -13,6 +13,7 @@ namespace Sonity {
     /// You can assign them in the <see cref="SoundEventBase">SoundEvent</see> settings.
     /// Because SoundMix use modifiers they only calculate the values once when the <see cref="SoundEventBase">SoundEvent</see> is started.
     /// If you want to have realtime volume control over sounds, use an AudioMixerGroup.
+    /// To learn more, take a look at the TemplateSoundVolumeManager script.
     /// All <see cref="SoundMixBase">SoundMix</see> objects are multi-object editable.
     /// Example use: Set up a “Master_MIX” and a “SFX_MIX” where the Master_MIX is a parent of the SFX_MIX.
     /// </summary>

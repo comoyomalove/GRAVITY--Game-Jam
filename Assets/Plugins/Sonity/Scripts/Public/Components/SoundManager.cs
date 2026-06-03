@@ -1,6 +1,6 @@
-﻿// Created by Victor Engström. This free trial is for testing only. It doesn't output sound in builds.
-// Copyright 2024 Sonigon AB. Please buy the full version to get sound in builds and to support developement.
-// https://assetstore.unity.com/packages/tools/audio/sonity-audio-middleware-229857
+﻿// Created by Victor Engström
+// Copyright 2025 Sonigon AB
+// http://www.sonity.org/
 
 using UnityEngine;
 using UnityEngine.Audio;
@@ -18,6 +18,14 @@ namespace Sonity {
     [Serializable]
     [AddComponentMenu("Sonity 🔊/Sonity - Sound Manager")]
     public class SoundManager : SoundManagerBase {
+
+//#if SONITY_ENABLE_INTEGRATION_ENTITY_SOUND
+//        void OnEnable() {
+//            if (!TryGetComponent(out EntitySoundManager entitySoundManager)) {
+//                gameObject.AddComponent<EntitySoundManager>();
+//            }
+//        }
+//#endif
 
         /// <summary>
         /// The static instance of the <see cref="SoundManagerBase">SoundManager</see>
@@ -253,7 +261,7 @@ namespace Sonity {
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise it is going to be stopped immediately
         /// </param>
         public void Stop(SoundEvent soundEvent, Transform owner, bool allowFadeOut = true) {
-            Internals.Stop(soundEvent, owner, allowFadeOut);
+            Internals.Stop(soundEvent, owner, OwnerPlayType.Normal, allowFadeOut);
         }
 
         /// <summary>
@@ -321,7 +329,7 @@ namespace Sonity {
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
         /// </param>
         public void Pause(SoundEvent soundEvent, Transform owner, bool forcePause = false) {
-            Internals.Pause(soundEvent, owner, forcePause);
+            Internals.Pause(soundEvent, owner, OwnerPlayType.Normal, forcePause);
         }
 
         /// <summary>
@@ -334,7 +342,7 @@ namespace Sonity {
         /// The owner <see cref="Transform"/>
         /// </param>
         public void Unpause(SoundEvent soundEvent, Transform owner) {
-            Internals.Unpause(soundEvent, owner);
+            Internals.Unpause(soundEvent, owner, OwnerPlayType.Normal);
         }
 
         /// <summary>
@@ -401,49 +409,19 @@ namespace Sonity {
         }
 
         /// <summary>
-        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with the 2D <see cref="Transform"/> as owner
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with the UI <see cref="Transform"/> as owner
         /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
         /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
         /// </summary>
         /// <param name='soundEvent'>
         /// The <see cref="SoundEventBase">SoundEvent</see> to play
         /// </param>
-        public void Play2D(SoundEvent soundEvent) {
-            Internals.Play2D(soundEvent);
+        public void UIPlay(SoundEvent soundEvent) {
+            Internals.UIPlay(soundEvent);
         }
 
         /// <summary>
-        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with the Local <see cref="SoundTagBase">SoundTag</see> with the 2D <see cref="Transform"/> as owner
-        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
-        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
-        /// </summary>
-        /// <param name='soundEvent'>
-        /// The <see cref="SoundEventBase">SoundEvent</see> to play
-        /// </param>
-        /// <param name='localSoundTag'>
-        /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
-        /// </param>
-        public void Play2D(SoundEvent soundEvent, SoundTag localSoundTag) {
-            Internals.Play2D(soundEvent, localSoundTag);
-        }
-
-        /// <summary>
-        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with <see cref="SoundParameterInternals"/> with the 2D <see cref="Transform"/> as owner
-        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
-        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
-        /// </summary>
-        /// <param name='soundEvent'>
-        /// The <see cref="SoundEventBase">SoundEvent</see> to play
-        /// </param>
-        /// <param name='soundParameters'>
-        /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
-        /// </param>
-        public void Play2D(SoundEvent soundEvent, params SoundParameterInternals[] soundParameters) {
-            Internals.Play2D(soundEvent, soundParameters);
-        }
-
-        /// <summary>
-        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with <see cref="SoundParameterInternals"/> with the Local <see cref="SoundTagBase">SoundTag</see> with the 2D <see cref="Transform"/> as owner
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with the Local <see cref="SoundTagBase">SoundTag</see> with the UI <see cref="Transform"/> as owner
         /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
         /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
         /// </summary>
@@ -453,15 +431,45 @@ namespace Sonity {
         /// <param name='localSoundTag'>
         /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
         /// </param>
-        /// <param name='soundParameters'>
-        /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
-        /// </param>
-        public void Play2D(SoundEvent soundEvent, SoundTag localSoundTag, params SoundParameterInternals[] soundParameters) {
-            Internals.Play2D(soundEvent, localSoundTag, soundParameters);
+        public void UIPlay(SoundEvent soundEvent, SoundTag localSoundTag) {
+            Internals.UIPlay(soundEvent, localSoundTag);
         }
 
         /// <summary>
-        /// Plays the <see cref="SoundEventBase">SoundEvent</see> at the position with the 2D <see cref="Transform"/> as owner
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with <see cref="SoundParameterInternals"/> with the UI <see cref="Transform"/> as owner
+        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
+        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to play
+        /// </param>
+        /// <param name='soundParameters'>
+        /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
+        /// </param>
+        public void UIPlay(SoundEvent soundEvent, params SoundParameterInternals[] soundParameters) {
+            Internals.UIPlay(soundEvent, soundParameters);
+        }
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with <see cref="SoundParameterInternals"/> with the Local <see cref="SoundTagBase">SoundTag</see> with the UI <see cref="Transform"/> as owner
+        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
+        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to play
+        /// </param>
+        /// <param name='localSoundTag'>
+        /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
+        /// </param>
+        /// <param name='soundParameters'>
+        /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
+        /// </param>
+        public void UIPlay(SoundEvent soundEvent, SoundTag localSoundTag, params SoundParameterInternals[] soundParameters) {
+            Internals.UIPlay(soundEvent, localSoundTag, soundParameters);
+        }
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> at the position with the UI <see cref="Transform"/> as owner
         /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
         /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
         /// Useful for <see cref="UnityEngine.Events.UnityEvent"/>s because it only has one parameter
@@ -469,12 +477,12 @@ namespace Sonity {
         /// <param name='position'>
         /// The position <see cref="Vector3"/> (can't follow position)
         /// </param>
-        public void Play2DAtPosition(SoundEvent soundEvent, Vector3 position) {
-            Internals.Play2DAtPosition(soundEvent, position);
+        public void UIPlayAtPosition(SoundEvent soundEvent, Vector3 position) {
+            Internals.UIPlayAtPosition(soundEvent, position);
         }
 
         /// <summary>
-        /// Plays the <see cref="SoundEventBase">SoundEvent</see> at the position with the 2D <see cref="Transform"/> as owner
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> at the position with the UI <see cref="Transform"/> as owner
         /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
         /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
         /// Useful for <see cref="UnityEngine.Events.UnityEvent"/>s because it only has one parameter
@@ -482,12 +490,12 @@ namespace Sonity {
         /// <param name='position'>
         /// The position <see cref="Transform"/> (can follow position)
         /// </param>
-        public void Play2DAtPosition(SoundEvent soundEvent, Transform position) {
-            Internals.Play2DAtPosition(soundEvent, position);
+        public void UIPlayAtPosition(SoundEvent soundEvent, Transform position) {
+            Internals.UIPlayAtPosition(soundEvent, position);
         }
 
         /// <summary>
-        /// Stops the <see cref="SoundEventBase">SoundEvent</see> at the 2D <see cref="Transform"/>
+        /// Stops the <see cref="SoundEventBase">SoundEvent</see> at the UI <see cref="Transform"/>
         /// </summary>
         /// <param name='soundEvent'>
         /// The <see cref="SoundEventBase">SoundEvent</see> to stop
@@ -495,22 +503,22 @@ namespace Sonity {
         /// <param name='allowFadeOut'>
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise it is going to be stopped immediately
         /// </param>
-        public void Stop2D(SoundEvent soundEvent, bool allowFadeOut = true) {
-            Internals.Stop2D(soundEvent, allowFadeOut);
+        public void UIStop(SoundEvent soundEvent, bool allowFadeOut = true) {
+            Internals.UIStop(soundEvent, allowFadeOut);
         }
 
         /// <summary>
-        /// Stops all <see cref="SoundEventBase">SoundEvents</see> at the 2D <see cref="Transform"/>
+        /// Stops all <see cref="SoundEventBase">SoundEvents</see> at the UI <see cref="Transform"/>
         /// </summary>
         /// <param name='allowFadeOut'>
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise it is going to be stopped immediately
         /// </param>
-        public void StopAll2D(bool allowFadeOut = true) {
-            Internals.StopAll2D(allowFadeOut);
+        public void UIStopAll(bool allowFadeOut = true) {
+            Internals.UIStopAll(allowFadeOut);
         }
 
         /// <summary>
-        /// Pauses the <see cref="SoundEventBase">SoundEvent</see> at the 2D <see cref="Transform"/> locally
+        /// Pauses the <see cref="SoundEventBase">SoundEvent</see> at the UI <see cref="Transform"/> locally
         /// </summary>
         /// <param name='soundEvent'>
         /// The <see cref="SoundEventBase">SoundEvent</see> to pause
@@ -518,39 +526,39 @@ namespace Sonity {
         /// <param name='forcePause'>
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
         /// </param>
-        public void Pause2D(SoundEvent soundEvent, bool forcePause = false) {
-            Internals.Pause2D(soundEvent, forcePause);
+        public void UIPause(SoundEvent soundEvent, bool forcePause = false) {
+            Internals.UIPause(soundEvent, forcePause);
         }
 
         /// <summary>
-        /// Unpauses the <see cref="SoundEventBase">SoundEvent</see> at the 2D <see cref="Transform"/> locally
+        /// Unpauses the <see cref="SoundEventBase">SoundEvent</see> at the UI <see cref="Transform"/> locally
         /// </summary>
         /// <param name='soundEvent'>
         /// The <see cref="SoundEventBase">SoundEvent</see> to pause
         /// </param>
-        public void Unpause2D(SoundEvent soundEvent) {
-            Internals.Unpause2D(soundEvent);
+        public void UIUnpause(SoundEvent soundEvent) {
+            Internals.UIUnpause(soundEvent);
         }
 
         /// <summary>
-        /// Pauses all <see cref="SoundEventBase">SoundEvents</see> at the 2D <see cref="Transform"/> locally
+        /// Pauses all <see cref="SoundEventBase">SoundEvents</see> at the UI <see cref="Transform"/> locally
         /// </summary>
         /// <param name='forcePause'>
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
         /// </param>
-        public void PauseAll2D(bool forcePause = false) {
-            Internals.PauseAll2D(forcePause);
+        public void UIPauseAll(bool forcePause = false) {
+            Internals.UIPauseAll(forcePause);
         }
 
         /// <summary>
-        /// Unpauses all <see cref="SoundEventBase">SoundEvents</see> at the 2D <see cref="Transform"/> locally
+        /// Unpauses all <see cref="SoundEventBase">SoundEvents</see> at the UI <see cref="Transform"/> locally
         /// </summary>
-        public void UnpauseAll2D() {
-            Internals.UnpauseAll2D();
+        public void UIUnpauseAll() {
+            Internals.UIUnpauseAll();
         }
 
         /// <summary>
-        /// <para> Uses the 2D owner Transform </para>
+        /// <para> Uses the UI owner Transform </para>
         /// <para> If playing it returns <see cref="SoundEventState.Playing"/> </para> 
         /// <para> If paused either locally or globally it returns <see cref="SoundEventState.Paused"/> </para>
         /// <para> If not playing, but it is delayed it returns <see cref="SoundEventState.Delayed"/> </para> 
@@ -559,26 +567,26 @@ namespace Sonity {
         /// </summary>
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the <see cref="SoundEventState"/> from </param>
         /// <returns> Returns <see cref="SoundEventState"/> of the <see cref="SoundEventBase">SoundEvents</see> <see cref="SoundEventInstance"/> </returns>
-        public SoundEventState Get2DSoundEventState(SoundEvent soundEvent) {
-            return Internals.Get2DSoundEventState(soundEvent);
+        public SoundEventState UIGetSoundEventState(SoundEvent soundEvent) {
+            return Internals.UIGetSoundEventState(soundEvent);
         }
 
         /// <summary>
-        /// <para> Uses the 2D owner Transform </para>
+        /// <para> Uses the UI owner Transform </para>
         /// <para> Returns the length (in seconds) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
-        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
-        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// <para> Returns <see cref="Mathf.Infinity"/> if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns <see cref="Mathf.Infinity"/> if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
         /// <para> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </para>
         /// </summary>
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the length from </param>
         /// <param name="pitchSpeed"> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </param>
         /// <returns> Length in seconds </returns>
-        public float Get2DLastPlayedClipLength(SoundEvent soundEvent, bool pitchSpeed) {
-            return Internals.Get2DLastPlayedClipLength(soundEvent, pitchSpeed);
+        public float UIGetLastPlayedClipLength(SoundEvent soundEvent, bool pitchSpeed) {
+            return Internals.UIGetLastPlayedClipLength(soundEvent, pitchSpeed);
         }
 
         /// <summary>
-        /// <para> Uses the 2D owner Transform </para>
+        /// <para> Uses the UI owner Transform </para>
         /// <para> Returns the current time (in seconds) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
         /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
         /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
@@ -587,24 +595,24 @@ namespace Sonity {
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time from </param>
         /// <param name="pitchSpeed"> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </param>
         /// <returns> Time in seconds </returns>
-        public float Get2DLastPlayedClipTimeSeconds(SoundEvent soundEvent, bool pitchSpeed) {
-            return Internals.Get2DLastPlayedClipTimeSeconds(soundEvent, pitchSpeed);
+        public float UIGetLastPlayedClipTimeSeconds(SoundEvent soundEvent, bool pitchSpeed) {
+            return Internals.UIGetLastPlayedClipTimeSeconds(soundEvent, pitchSpeed);
         }
 
         /// <summary>
-        /// <para> Uses the 2D owner Transform </para>
+        /// <para> Uses the UI owner Transform </para>
         /// <para> Returns the current time (in range 0 to 1) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
         /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
         /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
         /// </summary>
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time from </param>
         /// <returns> Time ratio from 0 to 1 </returns>
-        public float Get2DLastPlayedClipTimeRatio(SoundEvent soundEvent) {
-            return Internals.Get2DLastPlayedClipTimeRatio(soundEvent);
+        public float UIGetLastPlayedClipTimeRatio(SoundEvent soundEvent) {
+            return Internals.UIGetLastPlayedClipTimeRatio(soundEvent);
         }
 
         /// <summary>
-        /// <para> Uses the 2D owner Transform </para>
+        /// <para> Uses the UI owner Transform </para>
         /// <para> Returns the time (in seconds) since the <see cref="SoundEventBase">SoundEvent</see> was played </para>
         /// <para> Is calculated using the time scale selected in the <see cref="SoundManagerBase">SoundManager</see> </para>
         /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
@@ -612,16 +620,16 @@ namespace Sonity {
         /// </summary>
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time played from </param>
         /// <returns> Time in seconds </returns>
-        public float Get2DTimePlayed(SoundEvent soundEvent) {
-            return Internals.Get2DTimePlayed(soundEvent);
+        public float UIGetTimePlayed(SoundEvent soundEvent) {
+            return Internals.UIGetTimePlayed(soundEvent);
         }
 
         /// <summary>
-        /// Returns the owner <see cref="Transform"/> used by Play2D() etc
+        /// Returns the owner <see cref="Transform"/> used by UIPlay() etc
         /// </summary>
-        /// <returns> The <see cref="Transform"/> used by Play2D() etc </returns>
-        public Transform Get2DTransform() {
-            return Internals.Get2DTransform();
+        /// <returns> The <see cref="Transform"/> used by UIPlay() etc </returns>
+        public Transform UIGetTransform() {
+            return Internals.UIGetTransform();
         }
 
         /// <summary>
@@ -636,8 +644,8 @@ namespace Sonity {
         /// <param name="allowFadeOut">
         /// If the other stopped <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise they are going to be stopped immediately
         /// </param>
-        public void PlayMusic(SoundEvent soundEvent, bool stopAllOtherMusic = true, bool allowFadeOut = true) {
-            Internals.PlayMusic(soundEvent, stopAllOtherMusic, allowFadeOut);
+        public void MusicPlay(SoundEvent soundEvent, bool stopAllOtherMusic = true, bool allowFadeOut = true) {
+            Internals.MusicPlay(soundEvent, stopAllOtherMusic, allowFadeOut);
         }
 
         /// <summary>
@@ -655,8 +663,8 @@ namespace Sonity {
         /// <param name="soundParameters">
         /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
         /// </param>
-        public void PlayMusic(SoundEvent soundEvent, bool stopAllOtherMusic = true, bool allowFadeOut = true, params SoundParameterInternals[] soundParameters) {
-            Internals.PlayMusic(soundEvent, stopAllOtherMusic, allowFadeOut, soundParameters);
+        public void MusicPlay(SoundEvent soundEvent, bool stopAllOtherMusic = true, bool allowFadeOut = true, params SoundParameterInternals[] soundParameters) {
+            Internals.MusicPlay(soundEvent, stopAllOtherMusic, allowFadeOut, soundParameters);
         }
 
         /// <summary>
@@ -668,8 +676,8 @@ namespace Sonity {
         /// <param name='allowFadeOut'>
         /// If the other stopped <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise they are going to be stopped immediately
         /// </param>
-        public void StopMusic(SoundEvent soundEvent, bool allowFadeOut = true) {
-            Internals.StopMusic(soundEvent, allowFadeOut);
+        public void MusicStop(SoundEvent soundEvent, bool allowFadeOut = true) {
+            Internals.MusicStop(soundEvent, allowFadeOut);
         }
 
         /// <summary>
@@ -678,8 +686,8 @@ namespace Sonity {
         /// <param name='allowFadeOut'>
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise it is going to be stopped immediately
         /// </param>
-        public void StopAllMusic(bool allowFadeOut = true) {
-            Internals.StopAllMusic(allowFadeOut);
+        public void MusicStopAll(bool allowFadeOut = true) {
+            Internals.MusicStopAll(allowFadeOut);
         }
 
         /// <summary>
@@ -691,8 +699,8 @@ namespace Sonity {
         /// <param name='forcePause'>
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
         /// </param>
-        public void PauseMusic(SoundEvent soundEvent, bool forcePause = false) {
-            Internals.PauseMusic(soundEvent, forcePause);
+        public void MusicPause(SoundEvent soundEvent, bool forcePause = false) {
+            Internals.MusicPause(soundEvent, forcePause);
         }
 
         /// <summary>
@@ -701,8 +709,8 @@ namespace Sonity {
         /// <param name="soundEvent">
         /// The <see cref="SoundEventBase">SoundEvent</see> to unpause
         /// </param>
-        public void UnpauseMusic(SoundEvent soundEvent) {
-            Internals.UnpauseMusic(soundEvent);
+        public void MusicUnpause(SoundEvent soundEvent) {
+            Internals.MusicUnpause(soundEvent);
         }
 
         /// <summary>
@@ -711,15 +719,15 @@ namespace Sonity {
         /// <param name='forcePause'>
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
         /// </param>
-        public void PauseAllMusic(bool forcePause = false) {
-            Internals.PauseAllMusic(forcePause);
+        public void MusicPauseAll(bool forcePause = false) {
+            Internals.MusicPauseAll(forcePause);
         }
 
         /// <summary>
         /// Unpauses all the <see cref="SoundEventBase">SoundEvents</see> playing at the Music <see cref="Transform"/> locally
         /// </summary>
-        public void UnpauseAllMusic() {
-            Internals.UnpauseAllMusic();
+        public void MusicUnpauseAll() {
+            Internals.MusicUnpauseAll();
         }
 
         /// <summary>
@@ -732,22 +740,22 @@ namespace Sonity {
         /// </summary>
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the <see cref="SoundEventState"/> from </param>
         /// <returns> Returns <see cref="SoundEventState"/> of the <see cref="SoundEventBase">SoundEvents</see> <see cref="SoundEventInstance"/> </returns>
-        public SoundEventState GetMusicSoundEventState(SoundEvent soundEvent) {
-            return Internals.GetMusicSoundEventState(soundEvent);
+        public SoundEventState MusicGetSoundEventState(SoundEvent soundEvent) {
+            return Internals.MusicGetSoundEventState(soundEvent);
         }
 
         /// <summary>
         /// <para> Uses the Music owner Transform </para>
         /// <para> Returns the length (in seconds) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
-        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
-        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// <para> Returns <see cref="Mathf.Infinity"/> if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns <see cref="Mathf.Infinity"/> if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
         /// <para> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </para>
         /// </summary>
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the length from </param>
         /// <param name="pitchSpeed"> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </param>
         /// <returns> Length in seconds </returns>
-        public float GetMusicLastPlayedClipLength(SoundEvent soundEvent, bool pitchSpeed) {
-            return Internals.GetMusicLastPlayedClipLength(soundEvent, pitchSpeed);
+        public float MusicGetLastPlayedClipLength(SoundEvent soundEvent, bool pitchSpeed) {
+            return Internals.MusicGetLastPlayedClipLength(soundEvent, pitchSpeed);
         }
 
         /// <summary>
@@ -760,8 +768,8 @@ namespace Sonity {
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time from </param>
         /// <param name="pitchSpeed"> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </param>
         /// <returns> Time in seconds </returns>
-        public float GetMusicLastPlayedClipTimeSeconds(SoundEvent soundEvent, bool pitchSpeed) {
-            return Internals.GetMusicLastPlayedClipTimeSeconds(soundEvent, pitchSpeed);
+        public float MusicGetLastPlayedClipTimeSeconds(SoundEvent soundEvent, bool pitchSpeed) {
+            return Internals.MusicGetLastPlayedClipTimeSeconds(soundEvent, pitchSpeed);
         }
 
         /// <summary>
@@ -772,8 +780,8 @@ namespace Sonity {
         /// </summary>
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time from </param>
         /// <returns> Time ratio from 0 to 1 </returns>
-        public float GetMusicLastPlayedClipTimeRatio(SoundEvent soundEvent) {
-            return Internals.GetMusicLastPlayedClipTimeRatio(soundEvent);
+        public float MusicGetLastPlayedClipTimeRatio(SoundEvent soundEvent) {
+            return Internals.MusicGetLastPlayedClipTimeRatio(soundEvent);
         }
 
         /// <summary>
@@ -785,16 +793,16 @@ namespace Sonity {
         /// </summary>
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time played from </param>
         /// <returns> Time in seconds </returns>
-        public float GetMusicTimePlayed(SoundEvent soundEvent) {
-            return Internals.GetMusicTimePlayed(soundEvent);
+        public float MusicGetTimePlayed(SoundEvent soundEvent) {
+            return Internals.MusicGetTimePlayed(soundEvent);
         }
 
         /// <summary>
-        /// Returns the owner <see cref="Transform"/> used by PlayMusic() etc
+        /// Returns the owner <see cref="Transform"/> used by MusicPlay() etc
         /// </summary>
-        /// <returns> The <see cref="Transform"/> used by PlayMusic() etc </returns>
-        public Transform GetMusicTransform() {
-            return Internals.GetMusicTransform();
+        /// <returns> The <see cref="Transform"/> used by MusicPlay() etc </returns>
+        public Transform MusicGetTransform() {
+            return Internals.MusicGetTransform();
         }
 
         /// <summary>
@@ -813,8 +821,8 @@ namespace Sonity {
 
         /// <summary>
         /// <para> Returns the length (in seconds) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
-        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
-        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// <para> Returns <see cref="Mathf.Infinity"/> if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns <see cref="Mathf.Infinity"/> if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
         /// <para> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </para>
         /// </summary>
         /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the length from </param>
@@ -1094,15 +1102,416 @@ namespace Sonity {
         }
 
         /// <summary>
-        /// If you have Adressable AudioMixer enabled in the SoundManager you need to use this AudioMixer instance for e.g. AudioMixer.SetFloat().
-        /// This is to fix problems when the AudioMixer is an adressable asset because it might create both a normal and an adressable instance with different IDs.
-        /// For Adressable AudioMixer to work, you need to add the package "com.unity.addressables".
-        /// You also need to define the Script Define Symbol "SONITY_ENABLE_ADRESSABLE_AUDIOMIXER".
+        /// If you have addressable AudioMixer enabled in the SoundManager you need to use this AudioMixer instance for e.g. AudioMixer.SetFloat().
+        /// This is to fix problems when the AudioMixer is an addressable asset because it might create both a normal and an addressable instance with different IDs.
+        /// Note that when using an Addressable AudioMixer you should also enable Async Startup to increase startup speed.
+        /// For Addressable AudioMixer to work, you need to add the package "com.unity.addressables".
+        /// You also need to define the Script Define Symbol "SONITY_ENABLE_ADDRESSABLE_AUDIOMIXER".
         /// Asmdef_Sonity.Internal.Runtime references Unity.Addressables and Unity.ResourceManager.
         /// Asmdef_Sonity.Internal.Editor references Unity.Addressables.
         /// </summary>
-        public AudioMixer GetAdressableAudioMixer() {
-            return Internals.GetAdressableAudioMixer();
+        public AudioMixer GetAddressableAudioMixer() {
+            return Internals.GetAddressableAudioMixer();
         }
+
+#if SONITY_ENABLE_LEGACY_FUNCTIONS_MUSIC_AND_2D
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with the 2D <see cref="Transform"/> as owner
+        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
+        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to play
+        /// </param>
+        public void Play2D(SoundEvent soundEvent) {
+            Internals.UIPlay(soundEvent);
+        }
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with the Local <see cref="SoundTagBase">SoundTag</see> with the 2D <see cref="Transform"/> as owner
+        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
+        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to play
+        /// </param>
+        /// <param name='localSoundTag'>
+        /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
+        /// </param>
+        public void Play2D(SoundEvent soundEvent, SoundTag localSoundTag) {
+            Internals.UIPlay(soundEvent, localSoundTag);
+        }
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with <see cref="SoundParameterInternals"/> with the 2D <see cref="Transform"/> as owner
+        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
+        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to play
+        /// </param>
+        /// <param name='soundParameters'>
+        /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
+        /// </param>
+        public void Play2D(SoundEvent soundEvent, params SoundParameterInternals[] soundParameters) {
+            Internals.UIPlay(soundEvent, soundParameters);
+        }
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> with <see cref="SoundParameterInternals"/> with the Local <see cref="SoundTagBase">SoundTag</see> with the 2D <see cref="Transform"/> as owner
+        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
+        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to play
+        /// </param>
+        /// <param name='localSoundTag'>
+        /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
+        /// </param>
+        /// <param name='soundParameters'>
+        /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
+        /// </param>
+        public void Play2D(SoundEvent soundEvent, SoundTag localSoundTag, params SoundParameterInternals[] soundParameters) {
+            Internals.UIPlay(soundEvent, localSoundTag, soundParameters);
+        }
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> at the position with the 2D <see cref="Transform"/> as owner
+        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
+        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
+        /// Useful for <see cref="UnityEngine.Events.UnityEvent"/>s because it only has one parameter
+        /// </summary>
+        /// <param name='position'>
+        /// The position <see cref="Vector3"/> (can't follow position)
+        /// </param>
+        public void Play2DAtPosition(SoundEvent soundEvent, Vector3 position) {
+            Internals.UIPlayAtPosition(soundEvent, position);
+        }
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> at the position with the 2D <see cref="Transform"/> as owner
+        /// Useful to play e.g. UI or other 2D sounds without having to pass a <see cref="Transform"/>
+        /// To make the sound 2D you still need to disable distance and set spatial blend to 0 in the <see cref="SoundContainerBase">SoundContainer</see>
+        /// Useful for <see cref="UnityEngine.Events.UnityEvent"/>s because it only has one parameter
+        /// </summary>
+        /// <param name='position'>
+        /// The position <see cref="Transform"/> (can follow position)
+        /// </param>
+        public void Play2DAtPosition(SoundEvent soundEvent, Transform position) {
+            Internals.UIPlayAtPosition(soundEvent, position);
+        }
+
+        /// <summary>
+        /// Stops the <see cref="SoundEventBase">SoundEvent</see> at the 2D <see cref="Transform"/>
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to stop
+        /// </param>
+        /// <param name='allowFadeOut'>
+        /// If the <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise it is going to be stopped immediately
+        /// </param>
+        public void Stop2D(SoundEvent soundEvent, bool allowFadeOut = true) {
+            Internals.UIStop(soundEvent, allowFadeOut);
+        }
+
+        /// <summary>
+        /// Stops all <see cref="SoundEventBase">SoundEvents</see> at the 2D <see cref="Transform"/>
+        /// </summary>
+        /// <param name='allowFadeOut'>
+        /// If the <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise it is going to be stopped immediately
+        /// </param>
+        public void StopAll2D(bool allowFadeOut = true) {
+            Internals.UIStopAll(allowFadeOut);
+        }
+
+        /// <summary>
+        /// Pauses the <see cref="SoundEventBase">SoundEvent</see> at the 2D <see cref="Transform"/> locally
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to pause
+        /// </param>
+        /// <param name='forcePause'>
+        /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
+        /// </param>
+        public void Pause2D(SoundEvent soundEvent, bool forcePause = false) {
+            Internals.UIPause(soundEvent, forcePause);
+        }
+
+        /// <summary>
+        /// Unpauses the <see cref="SoundEventBase">SoundEvent</see> at the 2D <see cref="Transform"/> locally
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to pause
+        /// </param>
+        public void Unpause2D(SoundEvent soundEvent) {
+            Internals.UIUnpause(soundEvent);
+        }
+
+        /// <summary>
+        /// Pauses all <see cref="SoundEventBase">SoundEvents</see> at the 2D <see cref="Transform"/> locally
+        /// </summary>
+        /// <param name='forcePause'>
+        /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
+        /// </param>
+        public void PauseAll2D(bool forcePause = false) {
+            Internals.UIPauseAll(forcePause);
+        }
+
+        /// <summary>
+        /// Unpauses all <see cref="SoundEventBase">SoundEvents</see> at the 2D <see cref="Transform"/> locally
+        /// </summary>
+        public void UnpauseAll2D() {
+            Internals.UIUnpauseAll();
+        }
+
+        /// <summary>
+        /// <para> Uses the 2D owner Transform </para>
+        /// <para> If playing it returns <see cref="SoundEventState.Playing"/> </para> 
+        /// <para> If paused either locally or globally it returns <see cref="SoundEventState.Paused"/> </para>
+        /// <para> If not playing, but it is delayed it returns <see cref="SoundEventState.Delayed"/> </para> 
+        /// <para> If not playing and it is not delayed it returns <see cref="SoundEventState.NotPlaying"/> </para> 
+        /// <para> If the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null it returns <see cref="SoundEventState.NotPlaying"/> </para> 
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the <see cref="SoundEventState"/> from </param>
+        /// <returns> Returns <see cref="SoundEventState"/> of the <see cref="SoundEventBase">SoundEvents</see> <see cref="SoundEventInstance"/> </returns>
+        public SoundEventState Get2DSoundEventState(SoundEvent soundEvent) {
+            return Internals.UIGetSoundEventState(soundEvent);
+        }
+
+        /// <summary>
+        /// <para> Uses the 2D owner Transform </para>
+        /// <para> Returns the length (in seconds) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
+        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// <para> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </para>
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the length from </param>
+        /// <param name="pitchSpeed"> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </param>
+        /// <returns> Length in seconds </returns>
+        public float Get2DLastPlayedClipLength(SoundEvent soundEvent, bool pitchSpeed) {
+            return Internals.UIGetLastPlayedClipLength(soundEvent, pitchSpeed);
+        }
+
+        /// <summary>
+        /// <para> Uses the 2D owner Transform </para>
+        /// <para> Returns the current time (in seconds) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
+        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// <para> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </para>
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time from </param>
+        /// <param name="pitchSpeed"> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </param>
+        /// <returns> Time in seconds </returns>
+        public float Get2DLastPlayedClipTimeSeconds(SoundEvent soundEvent, bool pitchSpeed) {
+            return Internals.UIGetLastPlayedClipTimeSeconds(soundEvent, pitchSpeed);
+        }
+
+        /// <summary>
+        /// <para> Uses the 2D owner Transform </para>
+        /// <para> Returns the current time (in range 0 to 1) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
+        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time from </param>
+        /// <returns> Time ratio from 0 to 1 </returns>
+        public float Get2DLastPlayedClipTimeRatio(SoundEvent soundEvent) {
+            return Internals.UIGetLastPlayedClipTimeRatio(soundEvent);
+        }
+
+        /// <summary>
+        /// <para> Uses the 2D owner Transform </para>
+        /// <para> Returns the time (in seconds) since the <see cref="SoundEventBase">SoundEvent</see> was played </para>
+        /// <para> Is calculated using the time scale selected in the <see cref="SoundManagerBase">SoundManager</see> </para>
+        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time played from </param>
+        /// <returns> Time in seconds </returns>
+        public float Get2DTimePlayed(SoundEvent soundEvent) {
+            return Internals.UIGetTimePlayed(soundEvent);
+        }
+
+        /// <summary>
+        /// Returns the owner <see cref="Transform"/> used by Play2D() etc
+        /// </summary>
+        /// <returns> The <see cref="Transform"/> used by Play2D() etc </returns>
+        public Transform Get2DTransform() {
+            return Internals.UIGetTransform();
+        }
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> at the <see cref="SoundManagerBase">SoundManagers</see> music <see cref="Transform"/>
+        /// </summary>
+        /// <param name="soundEvent">
+        /// The <see cref="SoundEventBase">SoundEvent</see> to play
+        /// </param>
+        /// <param name="stopAllOtherMusic">
+        /// If all other <see cref="SoundEventBase">SoundEvents</see> played at the <see cref="SoundManagerBase">SoundManagers</see> music <see cref="Transform"/> should be stopped
+        /// </param>
+        /// <param name="allowFadeOut">
+        /// If the other stopped <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise they are going to be stopped immediately
+        /// </param>
+        public void PlayMusic(SoundEvent soundEvent, bool stopAllOtherMusic = true, bool allowFadeOut = true) {
+            Internals.MusicPlay(soundEvent, stopAllOtherMusic, allowFadeOut);
+        }
+
+        /// <summary>
+        /// Plays the <see cref="SoundEventBase">SoundEvent</see> at the <see cref="SoundManagerBase">SoundManagers</see> music <see cref="Transform"/>
+        /// </summary>
+        /// <param name="soundEvent">
+        /// The <see cref="SoundEventBase">SoundEvent</see> to play
+        /// </param>
+        /// <param name="stopAllOtherMusic">
+        /// If all other <see cref="SoundEventBase">SoundEvents</see> played at the <see cref="SoundManagerBase">SoundManagers</see> music <see cref="Transform"/> should be stopped
+        /// </param>
+        /// <param name="allowFadeOut">
+        /// If the other stopped <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise they are going to be stopped immediately
+        /// </param>
+        /// <param name="soundParameters">
+        /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
+        /// </param>
+        public void PlayMusic(SoundEvent soundEvent, bool stopAllOtherMusic = true, bool allowFadeOut = true, params SoundParameterInternals[] soundParameters) {
+            Internals.MusicPlay(soundEvent, stopAllOtherMusic, allowFadeOut, soundParameters);
+        }
+
+        /// <summary>
+        /// Stops the <see cref="SoundEventBase">SoundEvent</see> playing at the Music <see cref="Transform"/>
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to stop
+        /// </param>
+        /// <param name='allowFadeOut'>
+        /// If the other stopped <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise they are going to be stopped immediately
+        /// </param>
+        public void StopMusic(SoundEvent soundEvent, bool allowFadeOut = true) {
+            Internals.MusicStop(soundEvent, allowFadeOut);
+        }
+
+        /// <summary>
+        /// Stops all the <see cref="SoundEventBase">SoundEvents</see> playing at the Music <see cref="Transform"/>
+        /// </summary>
+        /// <param name='allowFadeOut'>
+        /// If the <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise it is going to be stopped immediately
+        /// </param>
+        public void StopAllMusic(bool allowFadeOut = true) {
+            Internals.MusicStopAll(allowFadeOut);
+        }
+
+        /// <summary>
+        /// Pauses the <see cref="SoundEventBase">SoundEvent</see> playing at the Music <see cref="Transform"/> locally
+        /// </summary>
+        /// <param name='soundEvent'>
+        /// The <see cref="SoundEventBase">SoundEvent</see> to pause
+        /// </param>
+        /// <param name='forcePause'>
+        /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
+        /// </param>
+        public void PauseMusic(SoundEvent soundEvent, bool forcePause = false) {
+            Internals.MusicPause(soundEvent, forcePause);
+        }
+
+        /// <summary>
+        /// Unpauses the <see cref="SoundEventBase">SoundEvent</see> at the <see cref="SoundManagerBase">SoundManagers</see> music <see cref="Transform"/> locally
+        /// </summary>
+        /// <param name="soundEvent">
+        /// The <see cref="SoundEventBase">SoundEvent</see> to unpause
+        /// </param>
+        public void UnpauseMusic(SoundEvent soundEvent) {
+            Internals.MusicUnpause(soundEvent);
+        }
+
+        /// <summary>
+        /// Pauses all the <see cref="SoundEventBase">SoundEvents</see> playing at the Music <see cref="Transform"/> locally
+        /// </summary>
+        /// <param name='forcePause'>
+        /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
+        /// </param>
+        public void PauseAllMusic(bool forcePause = false) {
+            Internals.MusicPauseAll(forcePause);
+        }
+
+        /// <summary>
+        /// Unpauses all the <see cref="SoundEventBase">SoundEvents</see> playing at the Music <see cref="Transform"/> locally
+        /// </summary>
+        public void UnpauseAllMusic() {
+            Internals.MusicUnpauseAll();
+        }
+
+        /// <summary>
+        /// <para> Uses the Music owner Transform </para>
+        /// <para> If playing it returns <see cref="SoundEventState.Playing"/> </para> 
+        /// <para> If paused either locally or globally it returns <see cref="SoundEventState.Paused"/> </para>
+        /// <para> If not playing, but it is delayed it returns <see cref="SoundEventState.Delayed"/> </para> 
+        /// <para> If not playing and it is not delayed it returns <see cref="SoundEventState.NotPlaying"/> </para> 
+        /// <para> If the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null it returns <see cref="SoundEventState.NotPlaying"/> </para> 
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the <see cref="SoundEventState"/> from </param>
+        /// <returns> Returns <see cref="SoundEventState"/> of the <see cref="SoundEventBase">SoundEvents</see> <see cref="SoundEventInstance"/> </returns>
+        public SoundEventState GetMusicSoundEventState(SoundEvent soundEvent) {
+            return Internals.MusicGetSoundEventState(soundEvent);
+        }
+
+        /// <summary>
+        /// <para> Uses the Music owner Transform </para>
+        /// <para> Returns the length (in seconds) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
+        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// <para> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </para>
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the length from </param>
+        /// <param name="pitchSpeed"> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </param>
+        /// <returns> Length in seconds </returns>
+        public float GetMusicLastPlayedClipLength(SoundEvent soundEvent, bool pitchSpeed) {
+            return Internals.MusicGetLastPlayedClipLength(soundEvent, pitchSpeed);
+        }
+
+        /// <summary>
+        /// <para> Uses the Music owner Transform </para>
+        /// <para> Returns the current time (in seconds) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
+        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// <para> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </para>
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time from </param>
+        /// <param name="pitchSpeed"> If it should be scaled by pitch. E.g. -12 semitones will be twice as long </param>
+        /// <returns> Time in seconds </returns>
+        public float GetMusicLastPlayedClipTimeSeconds(SoundEvent soundEvent, bool pitchSpeed) {
+            return Internals.MusicGetLastPlayedClipTimeSeconds(soundEvent, pitchSpeed);
+        }
+
+        /// <summary>
+        /// <para> Uses the Music owner Transform </para>
+        /// <para> Returns the current time (in range 0 to 1) of the <see cref="AudioClip"/> in the last played <see cref="AudioSource"/> </para>
+        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time from </param>
+        /// <returns> Time ratio from 0 to 1 </returns>
+        public float GetMusicLastPlayedClipTimeRatio(SoundEvent soundEvent) {
+            return Internals.MusicGetLastPlayedClipTimeRatio(soundEvent);
+        }
+
+        /// <summary>
+        /// <para> Uses the Music owner Transform </para>
+        /// <para> Returns the time (in seconds) since the <see cref="SoundEventBase">SoundEvent</see> was played </para>
+        /// <para> Is calculated using the time scale selected in the <see cref="SoundManagerBase">SoundManager</see> </para>
+        /// <para> Returns 0 if the <see cref="SoundEventInstance"/> is not playing </para>
+        /// <para> Returns 0 if the <see cref="SoundEventBase">SoundEvent</see> or <see cref="Transform"/> is null </para>
+        /// </summary>
+        /// <param name="soundEvent"> The <see cref="SoundEventBase">SoundEvent</see> get the time played from </param>
+        /// <returns> Time in seconds </returns>
+        public float GetMusicTimePlayed(SoundEvent soundEvent) {
+            return Internals.MusicGetTimePlayed(soundEvent);
+        }
+
+        /// <summary>
+        /// Returns the owner <see cref="Transform"/> used by PlayMusic() etc
+        /// </summary>
+        /// <returns> The <see cref="Transform"/> used by PlayMusic() etc </returns>
+        public Transform GetMusicTransform() {
+            return Internals.MusicGetTransform();
+        }
+#endif
     }
 }

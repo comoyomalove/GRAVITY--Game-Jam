@@ -1,6 +1,6 @@
-// Created by Victor Engström. This free trial is for testing only. It doesn't output sound in builds.
-// Copyright 2024 Sonigon AB. Please buy the full version to get sound in builds and to support developement.
-// https://assetstore.unity.com/packages/tools/audio/sonity-audio-middleware-229857
+// Created by Victor Engström
+// Copyright 2025 Sonigon AB
+// http://www.sonity.org/
 
 #if ENABLE_INPUT_SYSTEM
 // The new Input System
@@ -18,7 +18,7 @@ namespace ExampleSonity {
         private SoundParameterIntensity parameterIntensity = new SoundParameterIntensity(0f, UpdateMode.Continuous);
 
         private void Start() {
-            musicStem.PlayMusic(true, true, parameterIntensity);
+            musicStem.MusicPlay(true, true, parameterIntensity);
         }
 
         private void Update() {
@@ -56,7 +56,7 @@ namespace ExampleSonity {
         private SoundParameterIntensity parameterIntensity = new SoundParameterIntensity(0f, UpdateMode.Continuous);
 
         private void Start() {
-            musicStem.PlayMusic(true, true, parameterIntensity);
+            musicStem.MusicPlay(true, true, parameterIntensity);
         }
 
         private void Update() {

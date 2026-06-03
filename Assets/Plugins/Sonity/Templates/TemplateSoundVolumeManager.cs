@@ -1,6 +1,6 @@
-﻿// Created by Victor Engström. This free trial is for testing only. It doesn't output sound in builds.
-// Copyright 2024 Sonigon AB. Please buy the full version to get sound in builds and to support developement.
-// https://assetstore.unity.com/packages/tools/audio/sonity-audio-middleware-229857
+﻿// Created by Victor Engström
+// Copyright 2025 Sonigon AB
+// http://www.sonity.org/
 
 using UnityEngine;
 using UnityEngine.Audio;
@@ -19,181 +19,86 @@ namespace SonityTemplate {
         public AudioMixer audioMixer;
 
         // This sets the volume range in decibel scaled from 0-1
-        private float lowestVolumeDb = -80f;
+        private float volumeRangeLowestDecibel = -40f;
 
         // The names need to match the names of the exposed parameters in the mixer
-        private string parameterNameMaster = "Master_Volume";
-        private float volumeOffsetDbMaster = 0f;
-
-        private string parameterNameAMB = "AMB_Volume";
-        private float volumeOffsetDbAMB = 0f;
-
-        private string parameterNameMUS = "MUS_Volume";
-        private float volumeOffsetDbMUS = 0f;
-
-        private string parameterNameSFX = "SFX_Volume";
-        private float volumeOffsetDbSFX = 0f;
-
-        private string parameterNameUI = "UI_Volume";
-        private float volumeOffsetDbUI = 0f;
-
-        private string parameterNameVO = "VO_Volume";
-        private float volumeOffsetDbVO = 0f;
+        private const string parameterNameMaster = "Master_Volume";
+        private const string parameterNameMUS = "MUS_Volume";
+        private const string parameterNameSFX = "SFX_Volume";
+        private const string parameterNameAMB = "AMB_Volume";
+        private const string parameterNameUI = "UI_Volume";
+        private const string parameterNameVO = "VO_Volume";
 
         /// <summary>
         /// Set <see cref="AudioMixer"/> volumes
         /// Input is range 0 to 1
-        /// Its converted to a -80 to -0dB scale (the volume range is assignable with lowestVolumeDb)
+        /// Its converted to a -40 to -0dB scale (the volume range is assignable with volumeRangeLowestDecibel)
         /// 0 will clamp to -80dB (-infinity in the <see cref="AudioMixer"/>)
         /// </summary>
+        private void SetVolume(float volumeLinear, string parameterName) {
+            if (audioMixer == null) {
+#if UNITY_EDITOR
+                Debug.LogWarning($"You need to assign an {nameof(AudioMixer)} to set the volume.", this);
+#endif
+                return;
+            }
+            volumeLinear = Mathf.Clamp(volumeLinear, 0f, 1f);
+            // Invert and convert to dB
+            volumeLinear = (1f - volumeLinear) * volumeRangeLowestDecibel;
+            // Snap to -infinity
+            if (volumeLinear <= volumeRangeLowestDecibel) {
+                volumeLinear = -80f;
+            }
+            // Set volume
+            audioMixer.SetFloat(parameterName, volumeLinear);
+        }
+
         public void SetVolumeMaster(float volumeLinear) {
-            if (audioMixer == null) {
-#if UNITY_EDITOR
-                Debug.LogWarning($"You need to assign an {nameof(AudioMixer)} to set volumes.", this);
-#endif
-                return;
-            }
-            volumeLinear = Mathf.Clamp(volumeLinear, 0f, 1f);
-            // Invert and convert to dB
-            volumeLinear = (1f - volumeLinear) * lowestVolumeDb;
-            // Snap to -infinity
-            if (volumeLinear <= lowestVolumeDb) {
-                volumeLinear = -80f;
-            } else {
-                volumeLinear += volumeOffsetDbMaster;
-            }
-            // Set volume
-            audioMixer.SetFloat(parameterNameMaster, volumeLinear);
+            SetVolume(volumeLinear, parameterNameMaster);
         }
 
-        /// <summary>
-        /// Set <see cref="AudioMixer"/> volumes
-        /// Input is range 0 to 1
-        /// Its converted to a -80 to -0dB scale (the volume range is assignable with lowestVolumeDb)
-        /// 0 will clamp to -80dB (-infinity in the <see cref="AudioMixer"/>)
-        /// </summary>
-        public void SetVolumeAMB(float volumeLinear) {
-            if (audioMixer == null) {
-#if UNITY_EDITOR
-                Debug.LogWarning($"You need to assign an {nameof(AudioMixer)} to set volumes.", this);
-#endif
-                return;
-            }
-            volumeLinear = Mathf.Clamp(volumeLinear, 0f, 1f);
-            // Invert and convert to dB
-            volumeLinear = (1f - volumeLinear) * lowestVolumeDb;
-            // Snap to -infinity
-            if (volumeLinear <= lowestVolumeDb) {
-                volumeLinear = -80f;
-            } else {
-                volumeLinear += volumeOffsetDbAMB;
-            }
-            // Set volume
-            audioMixer.SetFloat(parameterNameAMB, volumeLinear);
-        }
-
-        /// <summary>
-        /// Set <see cref="AudioMixer"/> volumes
-        /// Input is range 0 to 1
-        /// Its converted to a -80 to -0dB scale (the volume range is assignable with lowestVolumeDb)
-        /// 0 will clamp to -80dB (-infinity in the <see cref="AudioMixer"/>)
-        /// </summary>
         public void SetVolumeMUS(float volumeLinear) {
-            if (audioMixer == null) {
-#if UNITY_EDITOR
-                Debug.LogWarning($"You need to assign an {nameof(AudioMixer)} to set volumes.", this);
-#endif
-                return;
-            }
-            volumeLinear = Mathf.Clamp(volumeLinear, 0f, 1f);
-            // Invert and convert to dB
-            volumeLinear = (1f - volumeLinear) * lowestVolumeDb;
-            // Snap to -infinity
-            if (volumeLinear <= lowestVolumeDb) {
-                volumeLinear = -80f;
-            } else {
-                volumeLinear += volumeOffsetDbMUS;
-            }
-            // Set volume
-            audioMixer.SetFloat(parameterNameMUS, volumeLinear);
+            SetVolume(volumeLinear, parameterNameMUS);
         }
 
-        /// <summary>
-        /// Set <see cref="AudioMixer"/> volumes
-        /// Input is range 0 to 1
-        /// Its converted to a -80 to -0dB scale (the volume range is assignable with lowestVolumeDb)
-        /// 0 will clamp to -80dB (-infinity in the <see cref="AudioMixer"/>)
-        /// </summary>
         public void SetVolumeSFX(float volumeLinear) {
-            if (audioMixer == null) {
-#if UNITY_EDITOR
-                Debug.LogWarning($"You need to assign an {nameof(AudioMixer)} to set volumes.", this);
-#endif
-                return;
-            }
-            volumeLinear = Mathf.Clamp(volumeLinear, 0f, 1f);
-            // Invert and convert to dB
-            volumeLinear = (1f - volumeLinear) * lowestVolumeDb;
-            // Snap to -infinity
-            if (volumeLinear <= lowestVolumeDb) {
-                volumeLinear = -80f;
-            } else {
-                volumeLinear += volumeOffsetDbSFX;
-            }
-            // Set volume
-            audioMixer.SetFloat(parameterNameSFX, volumeLinear);
+            SetVolume(volumeLinear, parameterNameSFX);
         }
 
-        /// <summary>
-        /// Set <see cref="AudioMixer"/> volumes
-        /// Input is range 0 to 1
-        /// Its converted to a -80 to -0dB scale (the volume range is assignable with lowestVolumeDb)
-        /// 0 will clamp to -80dB (-infinity in the <see cref="AudioMixer"/>)
-        /// </summary>
+        public void SetVolumeAMB(float volumeLinear) {
+            SetVolume(volumeLinear, parameterNameAMB);
+        }
+
         public void SetVolumeUI(float volumeLinear) {
-            if (audioMixer == null) {
-#if UNITY_EDITOR
-                Debug.LogWarning($"You need to assign an {nameof(AudioMixer)} to set volumes.", this);
-#endif
-                return;
-            }
-            volumeLinear = Mathf.Clamp(volumeLinear, 0f, 1f);
-            // Invert and convert to dB
-            volumeLinear = (1f - volumeLinear) * lowestVolumeDb;
-            // Snap to -infinity
-            if (volumeLinear <= lowestVolumeDb) {
-                volumeLinear = -80f;
-            } else {
-                volumeLinear += volumeOffsetDbUI;
-            }
-            // Set volume
-            audioMixer.SetFloat(parameterNameUI, volumeLinear);
+            SetVolume(volumeLinear, parameterNameUI);
         }
 
-        /// <summary>
-        /// Set <see cref="AudioMixer"/> volumes
-        /// Input is range 0 to 1
-        /// Its converted to a -80 to -0dB scale (the volume range is assignable with lowestVolumeDb)
-        /// 0 will clamp to -80dB (-infinity in the <see cref="AudioMixer"/>)
-        /// </summary>
         public void SetVolumeVO(float volumeLinear) {
-            if (audioMixer == null) {
-#if UNITY_EDITOR
-                Debug.LogWarning($"You need to assign an {nameof(AudioMixer)} to set volumes.", this);
-#endif
-                return;
-            }
-            volumeLinear = Mathf.Clamp(volumeLinear, 0f, 1f);
-            // Invert and convert to dB
-            volumeLinear = (1f - volumeLinear) * lowestVolumeDb;
-            // Snap to -infinity
-            if (volumeLinear <= lowestVolumeDb) {
-                volumeLinear = -80f;
-            } else {
-                volumeLinear += volumeOffsetDbVO;
-            }
-            // Set volume
-            audioMixer.SetFloat(parameterNameVO, volumeLinear);
+            SetVolume(volumeLinear, parameterNameVO);
+        }
+
+        public float VolumeMaster {
+            set => SetVolumeMaster(value);
+        }
+
+        public float VolumeMUS {
+            set => SetVolumeMUS(value);
+        }
+
+        public float VolumeSFX {
+            set => SetVolumeSFX(value);
+        }
+
+        public float VolumeAMB {
+            set => SetVolumeAMB(value);
+        }
+
+        public float VolumeUI {
+            set => SetVolumeUI(value);
+        }
+
+        public float VolumeVO {
+            set => SetVolumeVO(value);
         }
 
         // Singleton Instance

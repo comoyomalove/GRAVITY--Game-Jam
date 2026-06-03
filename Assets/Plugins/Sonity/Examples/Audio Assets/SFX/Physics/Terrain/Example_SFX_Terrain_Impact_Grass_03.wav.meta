@@ -20,10 +20,3 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 244369
-  packageName: Sonity - Audio Middleware - Free Trial
-  packageVersion: 1.0.6
-  assetPath: Assets/Plugins/Sonity/Examples/Audio Assets/SFX/Physics/Terrain/Example_SFX_Terrain_Impact_Grass_03.wav
-  uploadId: 712752

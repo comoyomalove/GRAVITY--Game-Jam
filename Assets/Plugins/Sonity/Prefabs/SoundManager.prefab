@@ -49,6 +49,8 @@ MonoBehaviour:
       settingExpandBase: 1
       settingsExpandAdvanced: 0
       disablePlayingSounds: 0
+      integrationEnableSteamAudio: 0
+      integrationEnablePlayMaker: 0
       soundTimeScale: 0
       globalPause: 0
       globalVolumeRatio: 1

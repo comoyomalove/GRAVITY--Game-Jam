@@ -183,7 +183,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0f5a6e3bc5837a14d86a60fe9be93749, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dfabc9ac6b815a44888265c3c04c885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxColliderSize: {x: 1, y: 1, z: 1}
 --- !u!1 &194676287
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b109fcb4696f673499454c65a8cc90d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textString: The SoundTrigger plays on enable and stops on disable
+  textString: The SoundTrigger plays on enable/nand stops on disable
   textColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1883804174
 GameObject:
@@ -523,6 +524,11 @@ MonoBehaviour:
       settingExpandBase: 1
       settingsExpandAdvanced: 0
       disablePlayingSounds: 0
+      asyncStartup: 0
+      steamAudioIntegrationEnable: 0
+      steamAudioSpatializeEnabledDefault: 1
+      entitySoundIntegrationEnable: 0
+      playmakerIntegrationEnable: 0
       soundTimeScale: 0
       globalPause: 0
       globalVolumeRatio: 1
@@ -532,7 +538,8 @@ MonoBehaviour:
       debugWarnings: 1
       debugInPlayMode: 1
       guiWarnings: 1
-      adressableAudioMixerUse: 0
+      addressableAudioMixerUse: 0
+      addressableAudioMixerAsyncLoadInEditor: 0
       globalSoundTag: {fileID: 0}
       distanceScale: 1
       overrideListenerDistance: 0

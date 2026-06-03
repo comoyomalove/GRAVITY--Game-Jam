@@ -1,9 +1,9 @@
 {
-    "name": "TemplateSonity",
+    "name": "SonityTemplate",
     "rootNamespace": "",
     "references": [
-        "Sonity.Public.Runtime",
-        "Sonity.Runtime"
+        "GUID:7587e79dba767974180aaa071919b937",
+        "GUID:eddc24eca6301ba4193fbddf2fc974a5"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

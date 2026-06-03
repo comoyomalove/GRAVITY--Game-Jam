@@ -1,6 +1,6 @@
-﻿// Created by Victor Engström. This free trial is for testing only. It doesn't output sound in builds.
-// Copyright 2024 Sonigon AB. Please buy the full version to get sound in builds and to support developement.
-// https://assetstore.unity.com/packages/tools/audio/sonity-audio-middleware-229857
+﻿// Created by Victor Engström
+// Copyright 2025 Sonigon AB
+// http://www.sonity.org/
 
 using UnityEngine;
 using Sonity;
@@ -41,7 +41,7 @@ namespace SonityTemplate {
             if (musicPlaying != MusicPlaying.MainMenu) {
                 musicPlaying = MusicPlaying.MainMenu;
                 // Playing the music, stopping all other music
-                SoundManager.Instance.PlayMusic(musicMainMenu, true, allowFadeOut);
+                SoundManager.Instance.MusicPlay(musicMainMenu, true, allowFadeOut);
 #if UNITY_EDITOR
                 if (debugMusicPlay) {
                     Debug.Log(gameObject.name + " Play: " + musicMainMenu.name);
@@ -56,7 +56,7 @@ namespace SonityTemplate {
             if (musicPlaying != MusicPlaying.Ingame) {
                 musicPlaying = MusicPlaying.Ingame;
                 // Playing the music, stopping all other music and allowing fade out
-                SoundManager.Instance.PlayMusic(musicIngame, true, allowFadeOut);
+                SoundManager.Instance.MusicPlay(musicIngame, true, allowFadeOut);
 #if UNITY_EDITOR
                 if (debugMusicPlay) {
                     Debug.Log(gameObject.name + " Play: " + musicIngame.name);
@@ -70,7 +70,7 @@ namespace SonityTemplate {
             if (musicPlaying != MusicPlaying.None) {
                 musicPlaying = MusicPlaying.None;
                 // Stopping music and allowing fade out
-                SoundManager.Instance.StopAllMusic(allowFadeOut);
+                SoundManager.Instance.MusicStopAll(allowFadeOut);
 #if UNITY_EDITOR
                 if (debugMusicPlay) {
                     Debug.Log(gameObject.name + " Stop All Music");

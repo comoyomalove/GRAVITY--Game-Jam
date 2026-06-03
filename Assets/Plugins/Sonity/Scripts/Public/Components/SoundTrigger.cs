@@ -1,6 +1,6 @@
-﻿// Created by Victor Engström. This free trial is for testing only. It doesn't output sound in builds.
-// Copyright 2024 Sonigon AB. Please buy the full version to get sound in builds and to support developement.
-// https://assetstore.unity.com/packages/tools/audio/sonity-audio-middleware-229857
+﻿// Created by Victor Engström
+// Copyright 2025 Sonigon AB
+// http://www.sonity.org/
 
 using UnityEngine;
 using System;
@@ -22,6 +22,7 @@ namespace Sonity {
         /// Plays the <see cref="SoundEventBase">SoundEvent</see> at the <see cref="Transform"/> position
         /// </summary>
         public void Play() {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].Play(internals.cachedTransform, null, internals.soundParameterDistanceScale, null);
@@ -36,6 +37,7 @@ namespace Sonity {
         /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
         /// </param>
         public void Play(SoundTagBase localSoundTag) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].Play(internals.cachedTransform, null, internals.soundParameterDistanceScale, localSoundTag);
@@ -50,6 +52,7 @@ namespace Sonity {
         /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
         /// </param>
         public void Play(params SoundParameterInternals[] soundParameters) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].Play(internals.cachedTransform, soundParameters, internals.soundParameterDistanceScale, null);
@@ -67,6 +70,7 @@ namespace Sonity {
         /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
         /// </param>
         public void Play(SoundTagBase localSoundTag, params SoundParameterInternals[] soundParameters) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].Play(internals.cachedTransform, soundParameters, internals.soundParameterDistanceScale, localSoundTag);
@@ -81,6 +85,7 @@ namespace Sonity {
         /// The position <see cref="Transform"/> (can follow position)
         /// </param>
         public void PlayAtPosition(Transform position) {
+            Initialize();
             if (position == null) {
                 if (ShouldDebug.Warnings()) {
                     Debug.LogWarning($"Sonity.{nameof(NameOf.SoundPicker)}: The position {nameof(Transform)} is null.", internals.cachedTransform);
@@ -104,6 +109,7 @@ namespace Sonity {
         /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
         /// </param>
         public void PlayAtPosition(Transform position, SoundTagBase localSoundTag) {
+            Initialize();
             if (position == null) {
                 if (ShouldDebug.Warnings()) {
                     Debug.LogWarning($"Sonity.{nameof(NameOf.SoundPicker)}: The position {nameof(Transform)} is null.", internals.cachedTransform);
@@ -127,6 +133,7 @@ namespace Sonity {
         /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
         /// </param>
         public void PlayAtPosition(Transform position, params SoundParameterInternals[] soundParameters) {
+            Initialize();
             if (position == null) {
                 if (ShouldDebug.Warnings()) {
                     Debug.LogWarning($"Sonity.{nameof(NameOf.SoundPicker)}: The position {nameof(Transform)} is null.", internals.cachedTransform);
@@ -153,6 +160,7 @@ namespace Sonity {
         /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
         /// </param>
         public void PlayAtPosition(Transform position, SoundTagBase localSoundTag, params SoundParameterInternals[] soundParameters) {
+            Initialize();
             if (position == null) {
                 if (ShouldDebug.Warnings()) {
                     Debug.LogWarning($"Sonity.{nameof(NameOf.SoundPicker)}: The position {nameof(Transform)} is null.", internals.cachedTransform);
@@ -173,6 +181,7 @@ namespace Sonity {
         /// The position <see cref="Vector3"/> (can't follow position)
         /// </param>
         public void PlayAtPosition(Vector3 position) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].PlayAtPosition(internals.cachedTransform, position, null, internals.soundParameterDistanceScale, null);
@@ -190,6 +199,7 @@ namespace Sonity {
         /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
         /// </param>
         public void PlayAtPosition(Vector3 position, SoundTagBase localSoundTag) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].PlayAtPosition(internals.cachedTransform, position, null, internals.soundParameterDistanceScale, localSoundTag);
@@ -207,6 +217,7 @@ namespace Sonity {
         /// For example <see cref="SoundParameterVolumeDecibel"/> is used to modify how the <see cref="SoundEventBase">SoundEvent</see> is played
         /// </param>
         public void PlayAtPosition(Vector3 position, params SoundParameterInternals[] soundParameters) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].PlayAtPosition(internals.cachedTransform, position, soundParameters, internals.soundParameterDistanceScale, null);
@@ -227,6 +238,7 @@ namespace Sonity {
         /// The <see cref="SoundTagBase">SoundTag</see> which will determine the Local <see cref="SoundTagBase">SoundTag</see> of the <see cref="SoundEventBase">SoundEvent</see>
         /// </param>
         public void PlayAtPosition(Vector3 position, SoundTagBase localSoundTag, params SoundParameterInternals[] soundParameters) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].PlayAtPosition(internals.cachedTransform, position, soundParameters, internals.soundParameterDistanceScale, localSoundTag);
@@ -241,6 +253,7 @@ namespace Sonity {
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise it is going to be stopped immediately
         /// </param>
         public void Stop(bool allowFadeOut = true) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].Stop(internals.cachedTransform, allowFadeOut);
@@ -258,6 +271,7 @@ namespace Sonity {
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be allowed to fade out. Otherwise it is going to be stopped immediately
         /// </param>
         public void StopAtPosition(Transform position, bool allowFadeOut = true) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].StopAtPosition(position, allowFadeOut);
@@ -272,6 +286,7 @@ namespace Sonity {
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
         /// </param>
         public void Pause(bool forcePause = false) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].Pause(internals.cachedTransform, forcePause);
@@ -283,6 +298,7 @@ namespace Sonity {
         /// Unpauses the <see cref="SoundEventBase">SoundEvent</see> with the owner <see cref="Transform"/> locally
         /// </summary>
         public void Unpause() {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].Unpause(internals.cachedTransform);
@@ -297,6 +313,7 @@ namespace Sonity {
         /// If the <see cref="SoundEventBase">SoundEvent</see> should be paused even if it is set to "Ignore Local Pause"
         /// </param>
         public void PauseEverywhere(bool forcePause = false) {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].PauseEverywhere(forcePause);
@@ -308,6 +325,7 @@ namespace Sonity {
         /// Unpauses the <see cref="SoundEventBase">SoundEvent</see> everywhere locally
         /// </summary>
         public void UnpauseEverywhere() {
+            Initialize();
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 if (internals.soundTriggerPart[i].soundEvent != null) {
                     internals.soundTriggerPart[i].UnpauseEverywhere();
@@ -326,6 +344,7 @@ namespace Sonity {
         /// Returns <see cref="SoundEventState"/> of the <see cref="SoundEventBase">SoundEvents</see> <see cref="SoundEventInstance"/> 
         /// </returns>
         public SoundEventState GetSoundEventState() {
+            Initialize();
             if (SoundManagerBase.Instance == null) {
                 Debug.LogWarning($"Sonity.{nameof(NameOf.SoundManager)} is null. Add one to the scene.");
                 return SoundEventState.NotPlaying;
@@ -354,6 +373,7 @@ namespace Sonity {
         /// Loads the Audio Data of the <see cref="AudioClip"/>(s) of the <see cref="SoundContainerBase">SoundContainer</see>(s) to RAM
         /// </summary>
         public void LoadAudioData() {
+            // Initialize not needed
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 internals.soundTriggerPart[i].LoadAudioData();
             }
@@ -363,6 +383,7 @@ namespace Sonity {
         /// Unloads the Audio Data of the <see cref="AudioClip"/>(s) of the <see cref="SoundContainerBase">SoundContainer</see>(s) from RAM
         /// </summary>
         public void UnloadAudioData() {
+            // Initialize not needed
             for (int i = 0; i < internals.soundTriggerPart.Length; i++) {
                 internals.soundTriggerPart[i].UnloadAudioData();
             }

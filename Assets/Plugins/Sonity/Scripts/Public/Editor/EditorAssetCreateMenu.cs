@@ -1,6 +1,6 @@
-﻿// Created by Victor Engström. This free trial is for testing only. It doesn't output sound in builds.
-// Copyright 2024 Sonigon AB. Please buy the full version to get sound in builds and to support developement.
-// https://assetstore.unity.com/packages/tools/audio/sonity-audio-middleware-229857
+﻿// Created by Victor Engström
+// Copyright 2025 Sonigon AB
+// http://www.sonity.org/
 
 #if UNITY_EDITOR
 
@@ -247,6 +247,7 @@ namespace Sonity.Internal {
                                                         soundContainer.internals.data.randomStartPosition = true;
                                                         soundContainer.internals.data.stopIfTransformIsNull = true;
                                                     }
+                                                    EditorUtility.SetDirty(soundContainer);
                                                     Debug.Log($"Sonity: Preset \"" + soundPresetGroup.soundContainerPreset.name + $"\" is applied to \"" + soundContainer.name + "\"", soundContainer);
                                                 }
                                             }
@@ -262,6 +263,7 @@ namespace Sonity.Internal {
                                             if (soundEvent != null) {
                                                 if (soundPresetGroup.GetNameMatches(soundEvent.name, false)) {
                                                     SoundEventCopy.CopyTo(soundEvent, soundPresetGroup.soundEventPreset);
+                                                    EditorUtility.SetDirty(soundEvent);
                                                     Debug.Log($"Sonity: Preset \"" + soundPresetGroup.soundEventPreset.name + $"\" is applied to \"" + soundEvent.name + "\"", soundEvent);
                                                 }
                                             }

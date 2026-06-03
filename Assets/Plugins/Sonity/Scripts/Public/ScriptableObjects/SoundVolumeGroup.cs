@@ -1,6 +1,6 @@
-﻿// Created by Victor Engström. This free trial is for testing only. It doesn't output sound in builds.
-// Copyright 2024 Sonigon AB. Please buy the full version to get sound in builds and to support developement.
-// https://assetstore.unity.com/packages/tools/audio/sonity-audio-middleware-229857
+﻿// Created by Victor Engström
+// Copyright 2025 Sonigon AB
+// http://www.sonity.org/
 
 using UnityEngine;
 using System;
@@ -13,6 +13,8 @@ namespace Sonity {
     /// You can assign them in the <see cref="SoundEventBase">SoundEvent</see> settings.
     /// It is perfect for quickly mixing the volume of a large group of sounds.
     /// It also supports +12dB volume if you “Enable Volume Increase” in the <see cref="SoundManagerBase">SoundManager</see>.
+    /// The volume is not meanted to be changed at runtime in builds.
+    /// If you want to control the volume in builds, take a look at the TemplateSoundVolumeManager script.
     /// All <see cref="SoundVolumeGroupBase">SoundVolumeGroup</see> objects are multi-object editable.
     /// Example use: Add the same <see cref="SoundVolumeGroupBase">SoundVolumeGroup</see> to all e.g. gunshot <see cref="SoundEventBase">SoundEvents</see> so you quickly can change their volumes.
     /// </summary>

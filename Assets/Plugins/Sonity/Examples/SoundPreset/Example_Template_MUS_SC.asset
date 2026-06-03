@@ -17,7 +17,7 @@ MonoBehaviour:
       foundReferences: []
       previewAudioMixerGroup: {fileID: 0}
       expandPreview: 0
-      expandAudioClips: 0
+      expandAudioClips: 1
       previewCurves: 1
       audioMixerGroup: {fileID: 0}
       settingsExpandBase: 1
@@ -47,8 +47,8 @@ MonoBehaviour:
       hrtfPluginSpatialize: 0
       hrtfPluginSpatializePostEffects: 0
       volumeExpand: 1
-      volumeDecibel: -12
-      volumeRatio: 0.25118864
+      volumeDecibel: 0
+      volumeRatio: 1
       volumeRandomEnable: 0
       volumeRandomRangeDecibel: -3
       volumeDistanceRolloff: -2
