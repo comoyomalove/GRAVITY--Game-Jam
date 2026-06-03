@@ -40,3 +40,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 .DS_Store
+ProjectSettings/SceneTemplateSettings.json
