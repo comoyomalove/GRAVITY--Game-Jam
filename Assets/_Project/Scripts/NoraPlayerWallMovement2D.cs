@@ -66,11 +66,11 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
         tangentDir = new Vector2(-gravityDir.y, gravityDir.x);
 
         bool grounded = IsGrounded();
-        Debug.Log("Ground:"+ grounded);
+        //Debug.Log("Ground:"+ grounded);
         if (grounded)
         {
             jumpsRemaining = maxJumps;
-            Debug.Log("I can jump again");
+            //Debug.Log("I can jump again");
         }
 
         rb.AddForce(gravityDir * gravityStrength * rb.mass, ForceMode2D.Force);
