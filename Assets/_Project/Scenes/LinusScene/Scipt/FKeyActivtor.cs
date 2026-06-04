@@ -1,5 +1,4 @@
 using UnityEngine;
-using Sonity; 
 
 public class FKeyActivator : MonoBehaviour
 {
@@ -11,12 +10,6 @@ public class FKeyActivator : MonoBehaviour
         {
             ActivateFunction();
         }
-    }
-    
-    public SoundEvent soundEventShot;
-    private void SoundF()
-    {
-        soundEventShot.Play(transform);
     }
 
     void ActivateFunction()
