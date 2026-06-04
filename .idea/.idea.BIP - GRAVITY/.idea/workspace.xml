@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9219c669-b89a-4326-b219-c74065d2c1fd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/LinusScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene/LinusScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BIP - GRAVITY/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BIP - GRAVITY/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/LinusScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/NoraScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/NoraScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/NoraPlayerWallMovement2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/NoraPlayerWallMovement2D.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +18,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/NoraPlayerWallMovement2D.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3EfEcBth4YzNyabNbMtPVDTtPoS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,7 +34,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/sound",
+    "git-widget-placeholder": "feature__Idea__Nora",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,7 +51,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1780561304773</updated>
-      <workItem from="1780561309737" duration="2386000" />
+      <workItem from="1780561309737" duration="3255000" />
+      <workItem from="1780581573957" duration="193000" />
     </task>
     <servers />
   </component>
