@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -7,7 +6,8 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private NoraGravityFieldManager gravityManager;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask GroundLayer;
+    [SerializeField] private Transform groundProbe;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 8f;
@@ -17,7 +17,10 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
     [Header("Gravity / Stickiness")]
     [SerializeField] private float gravityStrength = 25f;
     [SerializeField] private float stickForce = 20f;
-    [SerializeField] private float groundCheckDistance = 0.6f;
+    [SerializeField] private float groundProbeRadius = 0.12f;
+
+    [Header("Jump")]
+    [SerializeField] private int maxJumps = 2;
 
     [Header("Rotation")]
     [SerializeField] private float spriteUpOffset = 0f;
@@ -25,8 +28,8 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
     private Rigidbody2D rb;
     private float moveInput;
     private bool jumpQueued;
-    private bool grounded;
 
+    private int jumpsRemaining;
     private Vector2 gravityDir;
     private Vector2 tangentDir;
 
@@ -34,13 +37,17 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
+        jumpsRemaining = maxJumps;
     }
 
     private void Update()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)||
+            Input.GetKeyDown(KeyCode.W) ||
+            Input.GetKeyDown(KeyCode.UpArrow)
+        )
         {
             jumpQueued = true;
         }
@@ -56,7 +63,13 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
         gravityDir = gravityManager.GetGravityDirection(rb.position);
         tangentDir = new Vector2(-gravityDir.y, gravityDir.x);
 
-        grounded = Physics2D.Raycast(rb.position, gravityDir, groundCheckDistance, groundLayer);
+        bool grounded = IsGrounded();
+        Debug.Log("Ground:"+ grounded);
+        if (grounded)
+        {
+            jumpsRemaining = maxJumps;
+            Debug.Log("I can jump again");
+        }
 
         rb.AddForce(gravityDir * gravityStrength * rb.mass, ForceMode2D.Force);
 
@@ -66,7 +79,6 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
         }
 
         Vector2 velocity = rb.linearVelocity;
-
         float gravityVelocity = Vector2.Dot(velocity, gravityDir);
         float tangentVelocity = Vector2.Dot(velocity, tangentDir);
 
@@ -80,10 +92,10 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
 
         rb.linearVelocity = tangentDir * newTangentVelocity + gravityDir * gravityVelocity;
 
-        if (jumpQueued && grounded)
+        if (jumpQueued && jumpsRemaining > 0)
         {
             rb.AddForce(-gravityDir * jumpImpulse * rb.mass, ForceMode2D.Impulse);
-            grounded = false;
+            jumpsRemaining--;
         }
 
         jumpQueued = false;
@@ -92,15 +104,13 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
         rb.MoveRotation(angle);
     }
 
-    private void OnDrawGizmosSelected()
+    private bool IsGrounded()
     {
-        if (rb == null || gravityManager == null)
+        if (groundProbe == null)
         {
-            return;
+            return false;
         }
 
-        Vector2 dir = gravityManager.GetGravityDirection(transform.position);
-        Gizmos.color = grounded ? Color.green : Color.red;
-        Gizmos.DrawLine(rb.position, rb.position + dir * groundCheckDistance);
+        return Physics2D.OverlapCircle(groundProbe.position, groundProbeRadius, GroundLayer) != null;
     }
 }
