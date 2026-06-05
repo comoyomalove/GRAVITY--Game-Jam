@@ -608,6 +608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79720f1163dec7499831a37d3b96390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TitleScreen
+  gameplaySceneName: NoraScene
+  playButton: {fileID: 2011754484}
+  quitButton: {fileID: 0}
+  verboseLogging: 1
 --- !u!4 &1993122480
 Transform:
   m_ObjectHideFlags: 0
