@@ -22,7 +22,6 @@ public class NoraCollectibleCoin : MonoBehaviour
     private Collider2D[] colliders;
     private Vector2 lastSpawnPosition;
     private bool collecting;
-    private int points = 0;
 
     private void Awake()
     {
@@ -58,10 +57,10 @@ public class NoraCollectibleCoin : MonoBehaviour
 
         SetVisible(false);
 
-        if (points >= 0)
+        if (gameManager != null)
         {
             Debug.Log("Adding Score!");
-            points += 1;
+            gameManager.AddScore(1);
         }
 
         yield return new WaitForSeconds(respawnDelay);

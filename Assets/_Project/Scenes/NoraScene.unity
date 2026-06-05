@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce7181cb7bd6ef4aa38b1efa19df977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoraCollectibleCoin
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 297760131}
   blockedLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -3172,8 +3172,8 @@ SceneRoots:
   - {fileID: 555305016}
   - {fileID: 1639851054}
   - {fileID: 1181978957}
-  - {fileID: 297760132}
   - {fileID: 1152242120}
+  - {fileID: 297760132}
   - {fileID: 154465091}
   - {fileID: 826534647}
   - {fileID: 1252430139}
