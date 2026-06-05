@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Sonity; 
 
 public class NoraCollectibleCoin : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class NoraCollectibleCoin : MonoBehaviour
     private Collider2D[] colliders;
     private Vector2 lastSpawnPosition;
     private bool collecting;
+
+    public SoundEvent collectEventSound;
 
     private void Awake()
     {
@@ -50,6 +53,7 @@ public class NoraCollectibleCoin : MonoBehaviour
 
         StartCoroutine(CollectRoutine());
     }
+    
 
     private IEnumerator CollectRoutine()
     {
@@ -61,6 +65,7 @@ public class NoraCollectibleCoin : MonoBehaviour
         {
             Debug.Log("Adding Score!");
             gameManager.AddScore(1);
+            collectSound();
         }
 
         yield return new WaitForSeconds(respawnDelay);
@@ -71,13 +76,16 @@ public class NoraCollectibleCoin : MonoBehaviour
         collecting = false;
     }
 
+    private void collectSound()
+    {
+        collectEventSound.Play(transform);
+    }
     private void MoveToSafeSpot(Vector2? previousPosition)
     {
         Vector2 newPosition = FindSafePosition(previousPosition);
         transform.position = newPosition;
         lastSpawnPosition = newPosition;
     }
-
     private Vector2 FindSafePosition(Vector2? previousPosition)
     {
         float halfWidth = arenaSize.x * 0.5f;
@@ -119,4 +127,5 @@ public class NoraCollectibleCoin : MonoBehaviour
             col.enabled = visible;
         }
     }
+    
 }

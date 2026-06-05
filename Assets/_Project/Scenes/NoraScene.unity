@@ -271,6 +271,7 @@ MonoBehaviour:
   coinRadius: 0.35
   maxAttempts: 80
   respawnDelay: 0.3
+  collectEventSound: {fileID: 11400000, guid: 1c6814c1581803448a29ceb7ae9a8d86, type: 2}
 --- !u!1 &113287661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,6 +2660,7 @@ MonoBehaviour:
   groundProbeRadius: 0.12
   maxJumps: 2
   spriteUpOffset: 0
+  soundEventJump: {fileID: 11400000, guid: 18aaccb397aca674393dc9fe86c601ae, type: 2}
 --- !u!70 &1828514463
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3003,6 +3005,10 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 1258416142}
+    - target: {fileID: 4984443533371079816, guid: 3a30d580769681b47b7ac584ac78d321, type: 3}
+      propertyPath: deathEventSound
+      value: 
+      objectReference: {fileID: 11400000, guid: ff2bb6f78afe31641a76fa263814b4bb, type: 2}
     - target: {fileID: 6248240594345899811, guid: 3a30d580769681b47b7ac584ac78d321, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.39

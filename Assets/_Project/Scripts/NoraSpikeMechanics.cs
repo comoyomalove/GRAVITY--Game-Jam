@@ -1,10 +1,13 @@
 using UnityEngine;
+using Sonity; 
+
 
 public class NoraSpike : MonoBehaviour
 {
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private NoraGameManager gameManager;
     [SerializeField] private float timePenalty = 5f;
+    public SoundEvent deathEventSound; 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,6 +16,8 @@ public class NoraSpike : MonoBehaviour
 
         if (player == null)
             return;
+
+        deathSound(); 
 
         player.transform.position = respawnPoint.position;
 
@@ -28,5 +33,11 @@ public class NoraSpike : MonoBehaviour
         {
             gameManager.LoseTime(timePenalty);
         }
+        
+    }
+
+    private void deathSound()
+    {
+        deathEventSound.Play(transform);
     }
 }

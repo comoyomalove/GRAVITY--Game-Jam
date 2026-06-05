@@ -34,6 +34,8 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
     private int jumpsRemaining;
     private Vector2 gravityDir;
     private Vector2 tangentDir;
+    public SoundEvent soundEventJump;
+    
 
     private void Awake()
     {
@@ -50,9 +52,17 @@ public class NoraPlayerWallMovement2D : MonoBehaviour
             Input.GetKeyDown(KeyCode.W) ||
             Input.GetKeyDown(KeyCode.UpArrow)
         )
-        {
-            jumpQueued = true;
-        }
+           
+            
+    {
+        jumpQueued = true;
+        JumpSound();
+    }
+    
+}
+    private void JumpSound()
+    {
+        soundEventJump.Play(transform);
     }
 
     private void FixedUpdate()

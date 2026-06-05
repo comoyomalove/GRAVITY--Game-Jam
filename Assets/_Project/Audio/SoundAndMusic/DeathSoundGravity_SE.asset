@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b80e83c0feb1444db6d74f0748b6ec9, type: 3}
-  m_Name: Karoline-Game-jam-loop-SE
+  m_Name: DeathSoundGravity_SE
   m_EditorClassIdentifier: Sonity.Public.Runtime::Sonity.SoundEvent
   internals:
     notes: Notes
@@ -38,8 +38,8 @@ MonoBehaviour:
       debugDrawSoundEventColorEnd: {r: 0.66, g: 0, b: 1, a: 1}
       debugDrawSoundEventColorOutline: {r: 0, g: 0, b: 0, a: 1}
       baseExpand: 1
-      volumeDecibel: -9
-      volumeRatio: 0.35481337
+      volumeDecibel: 0
+      volumeRatio: 1
       polyphony: 1
       soundEventModifier:
         volumeDecibel: 0
@@ -246,6 +246,6 @@ MonoBehaviour:
         soundEvent:
         - {fileID: 0}
     soundContainers:
-    - {fileID: 11400000, guid: 99db2fd383438f64abdfda291dfdcce9, type: 2}
-  assetGuid: c20bae73dba56004ea56679ad6af51c3
-  assetGuidHash: 1195803522468717503
+    - {fileID: 11400000, guid: 9fc208fbd32c75048824699d5ae806ac, type: 2}
+  assetGuid: ff2bb6f78afe31641a76fa263814b4bb
+  assetGuidHash: 2060130884189559292
